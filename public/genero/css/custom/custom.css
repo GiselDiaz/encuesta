@@ -1,0 +1,244 @@
+/*================================================================================
+	Item Name: Materialize - Material Design Admin Template
+	Version: 5.0
+	Author: PIXINVENT
+	Author URL: https://themeforest.net/user/pixinvent/portfolio
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN CSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+.bg-primary{
+    background-color: #96124b !important;
+}
+
+.bg-menu{
+    background-color: rgb(137,138,141) !important;
+}
+.ltr-hd{
+
+
+    color:white !important;
+    text-align: center !important;
+}
+.bg-btt{
+    background-color: rgb(171,171,171) !important;
+}
+
+.cont-st{
+    border-color: #96124b !important;
+}
+.login-bg1
+{
+    background-color:  rgb(209,207,208);
+    background-image: url('../../images/logo/genero.png');
+    background-position:center;
+    background-repeat:  no-repeat;
+    background-size: cover;
+}
+.ltr-mod{
+    color:black !important;
+}
+.ltr-red{
+    color:  #96124b !important;
+}
+
+.color-bg-nav
+{
+    background: #96124b !important;
+}
+
+.color-bg-nav-menu
+{
+    background: #96124b !important;
+}
+
+
+.custom-tab-ok
+{
+    color: white;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    overflow:auto;
+}
+
+
+@font-face {
+    font-family: "San Francisco";
+    font-weight: 400;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
+body {
+    font-size: 1rem !important;
+    font-family: "San Francisco" !important;
+    background-color: #ffffff;
+    background-image: url(background2.svg);
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: 600;
+    font-size: 1.2rem !important;
+    font-style: normal;
+    text-align: center;
+
+}
+
+h1.img{
+    font-weight: 600;
+    font-size: 1.5rem !important;
+    font-family: "San Francisco" !important;
+    font-style: normal;
+    text-align: center;
+    margin: 0.8rem 0 0 0;
+}
+
+.sidenav li > a, .sidenav li a.collapsible-header {
+    font-weight: 600 !important;
+}
+
+
+.page-footer{
+    border-radius: 0px !important;
+}
+
+
+.form-control {
+    padding-left: 5px !important;
+    font-size: 0.8rem !important;
+    letter-spacing: 1px !important;
+}
+
+
+.mb-3 {
+    margin-bottom: 0% !important;
+}
+
+label {
+    color: #6d6969 !important;
+}
+
+
+input::placeholder {
+    color: #B1B1B1 !important;
+    font-size: 0.8em !important;
+    letter-spacing: 1px !important;
+
+}
+
+
+
+td {
+    font-size: 1rem !important;
+    color: #6b6f82;
+    text-align: center !important;
+}
+
+
+
+th {
+
+    font-size: 1rem !important;
+    text-align: center !important;
+}
+
+div#page-length-option_info {
+    font-size: 11px;
+}
+
+.col .row {
+    margin-right: 0.25rem !important;
+    margin-left: 0.25rem !important;
+}
+
+
+
+.page-footer .footer-copyright {
+    font-size: .8rem !important;
+    font-weight: normal !important;
+    line-height: 13px !important;
+
+}
+
+
+.cyan {
+    background-color: #96124b !important;
+}
+
+.deep-orange.accent-2 {
+    background-color: #96124b !important;
+}
+
+
+.deep-orange.accent-3 {
+    background-color: #f00 !important;
+}.accent-8 {
+    background-color: 109802!important;
+}
+
+
+.secondary-content {
+    float: right;
+    color: #af3c72;
+}
+
+
+
+[type='checkbox']:checked + span:not(.lever):before {
+
+    border-right: 2px solid #96124b;
+    border-bottom: 2px solid #96124b;
+   }
+
+
+
+#task-card .collection-header {
+    padding: 5px;
+}
+
+
+
+@media only screen and (min-width: 601px) {
+    .row .col.m6 {
+        opacity: 0.9 !important;
+    }
+}
+
+.teal.accent-4 {
+    background-color: #c1c1c1 !important;
+}
+
+
+
+
+.btn.btn-fab, .input-group-btn .btn.btn-fab {
+    border-radius: 50%;
+}
+
+body .topic-list .well .topic-meta .btn-default {
+    overflow: visible;
+    color: #782b2b !important;
+}
+
+
+.readmore {
+    color: #939598;
+    font-weight: bold;
+}
+
+.sear-imag{
+    background-image: url('../../images/logo/1.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+
+

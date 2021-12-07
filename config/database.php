@@ -62,6 +62,26 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
+        'mysql2' => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_HOST_SAF', 'localhost'),
+            'database'  => env('DB_DATABASE_SAF','adminple_saf'),
+            'username'  => env('DB_USERNAME_SAF','root'),
+            'password'  => env('DB_PASSWORD_SAF',''),
+//            'username'  => env('DB_USERNAME_SAF','homestead'),
+//            'password'  => env('DB_PASSWORD_SAF','secret'),
+
+            'charset'   => 'utf8mb4',
+            'strict' => false,
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix'    => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
 
         'pgsql' => [
             'driver' => 'pgsql',

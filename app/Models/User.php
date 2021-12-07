@@ -12,6 +12,9 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $connection = "mysql2";
+    protected $table = "users_safs";
+    protected $guarded = ["id","created_at","updated_at"];
     /**
      * The attributes that are mass assignable.
      *
@@ -41,4 +44,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function servidorPublico()
+    {
+        return $this->belongsTo(ServidorPulbicoDetail::class, "rfc","N_Usuario")->withDefault(["Nombre" => "Usuario no identificado"]);
+    }
+    public function setPasswordAttribute($v)
+    {
+        if (trim($v)) {
+            $this->attributes['password'] = app('hash')->make(trim($v));
+        }
+    }
 }

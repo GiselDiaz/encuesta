@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\QuizController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+
+Auth::routes();
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::resources([
+        'encuesta' => QuizController::class,
+        'datosG' => \App\Http\Controllers\DatosGeneralesUController::class
+    ]);
+
+    Route::get('/logout', function(){
+        Auth::logout();
+        return Redirect::to('login');
+    });
 });
