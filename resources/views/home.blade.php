@@ -31,7 +31,7 @@
                         </div>
                     @else
                         <div class="card-action orange lighten-4">
-                            <a href="{{route('datosG.index')}}" class="black-text" style="font-weight: bolder;">Sí, acepto</a>
+                            <a href="{{route('encuesta.index')}}" class="black-text" style="font-weight: bolder;">Sí, acepto</a>
                         </div>
                     @endif
                 </div>
