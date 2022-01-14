@@ -152,15 +152,16 @@ class LibrosController extends Controller
 
     public function pdf($id)
     {
+//        $data = Solicitud::select('solicituds.solicitante', 'solicituds.fecha_recoleccion','solicituds.hora_recoleccion','solicituds.fecha_entrega_usuario','solicituds.created_at','libros.nombre','libros.autor')
+//        ->join('libros', 'libros.id', '=', 'solicituds.libro_id')->where('solicituds.libro_id', $id)->where('solicituds.status', '1')
+//        ->get();
+//
+        $data = Solicitud::find($id);
+
+        //dd($data);
+        $sp =  ServidoresPublicosCentralizada::where('Estado',1)->where('N_Usuario', $data->solicitante)->get();
 
 
-        $data = Solicitud::select('solicituds.solicitante', 'solicituds.fecha_recoleccion','solicituds.hora_recoleccion','solicituds.fecha_entrega_usuario','solicituds.created_at','libros.nombre','libros.autor')
-        ->join('libros', 'libros.id', '=', 'solicituds.libro_id')->where('solicituds.libro_id', $id)->where('solicituds.status', '1')
-        ->get();
-
-        $sp =  ServidoresPublicosCentralizada::where('Estado',1)->where('N_Usuario', $data[0]->solicitante)->get();
-
-       
 
         $dir =  Direccion::where('id_Direccion',$sp[0]->id_Direccion)->first();
         $departamento =  Departamento::where('id_Departamento', $sp[0]->id_Departamento)->first();

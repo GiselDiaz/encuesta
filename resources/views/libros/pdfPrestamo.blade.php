@@ -300,15 +300,15 @@ padding-left: 20px;
         <table width="100%" border="1" cellpadding="4">
             <tbody>
                 <tr>
-                    <td align="left" width="100%">TÍTULO: <STRONG>{{$data[0]->nombre}}</STRONG>
+                    <td align="left" width="100%">TÍTULO: <STRONG>{{$data->libros->nombre}}</STRONG>
                     </td>
                 </tr>
 
                 <tr>
-                    <td align="left" width="100%">FECHA DE PRÉSTAMO: <strong> {{ \Carbon\Carbon::parse($data[0]->created_at)->format('d-m-Y')}}</strong> </td>
+                    <td align="left" width="100%">FECHA DE PRÉSTAMO: <strong> {{ \Carbon\Carbon::parse($data->created_at)->format('d-m-Y')}}</strong> </td>
                 </tr>
                 <tr>
-                    <td align="left" width="100%">FECHA DE DECOLUCIÓN: <strong> {{ \Carbon\Carbon::parse($data[0]->fecha_entrega_usuario)->format('d-m-Y')}}</strong> </td>
+                    <td align="left" width="100%">FECHA DE DECOLUCIÓN: <strong> {{ \Carbon\Carbon::parse($data->fecha_entrega_usuario)->format('d-m-Y')}}</strong> </td>
                 </tr>
 
             </tbody>

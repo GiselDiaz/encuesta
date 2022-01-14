@@ -44,7 +44,7 @@ Route::middleware(['auth'])->group(function () {
         'encuesta' => QuizController::class,
         'reportes' => ReporteController::class,
         'libros' => \App\Http\Controllers\LibrosController::class,
-        'solicitud' => SolicitudesController::class,
+        'solicitud' => \App\Http\Controllers\SolicitudesController::class,
         'datosG' => \App\Http\Controllers\DatosGeneralesUController::class
     ]);
 
