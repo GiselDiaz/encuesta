@@ -330,8 +330,7 @@ padding-left: 20px;
         <li style="text-align: justify; text-transform: capitalize;">Contemplar que el per&iacute;odo de pr&eacute;stamo es por 30 d&iacute;as, en su caso, podr&aacute; realizar la renovaci&oacute;n del per&iacute;odo en caso de disponibilidad.</li>
         </ul>
         <br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br>
+
 
             <table>
 
