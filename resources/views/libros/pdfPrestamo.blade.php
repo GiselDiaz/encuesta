@@ -44,7 +44,7 @@
         td {
             margin-top: 50px;
 
-            font-size: 11px;
+            font-size: 12px;
 
             /* border: 1px solid #000000; */
         }
