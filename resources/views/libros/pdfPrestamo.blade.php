@@ -268,7 +268,7 @@ padding-left: 20px;
             </h1>
             <hr>
         </div>
-        <h2 style="text-align: left; text-transform: capitalize; color:rgb(150,0,72);">
+        <h2 style="text-align: left; color:rgb(150,0,72);">
             <br><b>1.- Persona servidora pública solicitante </b>
         </h2>
 
@@ -296,7 +296,7 @@ padding-left: 20px;
             </tbody>
         </table>
 
-        <h2 style="text-align: left; text-transform: capitalize; color:rgb(150,0,72);">
+        <h2 style="text-align: left; color:rgb(150,0,72);">
             <br><b>2.- Datos del libro </b>
         </h2>
 
