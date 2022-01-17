@@ -158,7 +158,11 @@ padding-left: 20px;
         }
 
         h1 {
-            font-size: 12px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        h2 {
+            font-size: 14px;
             font-weight: bold;
         }
 
