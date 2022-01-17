@@ -36,7 +36,7 @@
         }
 
         p.texto {
-            font-size: 11px;
+            font-size: 12px;
 
             text-align: justify;
         }
@@ -241,8 +241,13 @@ padding-left: 20px;
         }
 
         p {
-            font-size: 10px;
-            text-align: right;
+            font-size: 12px;
+            text-align: justify;
+        }
+
+        li{
+            font-size: 12px;
+            text-align: justify;
         }
 
         .page_break {
@@ -324,10 +329,10 @@ padding-left: 20px;
         <br><br><br><br>
         <p style="text-align: left;"><strong >La Persona servidora p&uacute;blica solicitante deber&aacute;:</strong></p>
         <ul>
-        <li style="text-align: justify; text-transform: capitalize;">Acudir personalmente a la Unidad de Igualdad de G&eacute;nero y Erradicaci&oacute;n de la Violencia, a efecto de realizar el tr&aacute;mite de pr&eacute;stamo y entrega del libro.</li>
-        <li style="text-align: justify; text-transform: capitalize;">Informar a la Unidad de Igualdad de G&eacute;nero y Erradicaci&oacute;n de la Violencia, cualquier desperfecto o incidente con el libro.</li>
-        <li style="text-align: justify; text-transform: capitalize;">No maltratar, doblar, subrayar, manchar, arrancar hojas o im&aacute;genes del libro.</li>
-        <li style="text-align: justify; text-transform: capitalize;">Contemplar que el per&iacute;odo de pr&eacute;stamo es por 30 d&iacute;as, en su caso, podr&aacute; realizar la renovaci&oacute;n del per&iacute;odo en caso de disponibilidad.</li>
+        <li style="text-align: justify;">Acudir personalmente a la Unidad de Igualdad de G&eacute;nero y Erradicaci&oacute;n de la Violencia, a efecto de realizar el tr&aacute;mite de pr&eacute;stamo y entrega del libro.</li>
+        <li style="text-align: justify;">Informar a la Unidad de Igualdad de G&eacute;nero y Erradicaci&oacute;n de la Violencia, cualquier desperfecto o incidente con el libro.</li>
+        <li style="text-align: justify;">No maltratar, doblar, subrayar, manchar, arrancar hojas o im&aacute;genes del libro.</li>
+        <li style="text-align: justify;">Contemplar que el per&iacute;odo de pr&eacute;stamo es por 30 d&iacute;as, en su caso, podr&aacute; realizar la renovaci&oacute;n del per&iacute;odo en caso de disponibilidad.</li>
         </ul>
         <br><br><br><br><br><br><br><br>
 
