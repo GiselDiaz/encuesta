@@ -322,7 +322,7 @@ padding-left: 20px;
             </tbody>
         </table>
         <br><br><br><br>
-        <p style="text-align: left; text-transform: capitalize;"><strong >La Persona servidora p&uacute;blica solicitante deber&aacute;:</strong></p>
+        <p style="text-align: left;"><strong >La Persona servidora p&uacute;blica solicitante deber&aacute;:</strong></p>
         <ul>
         <li style="text-align: justify; text-transform: capitalize;">Acudir personalmente a la Unidad de Igualdad de G&eacute;nero y Erradicaci&oacute;n de la Violencia, a efecto de realizar el tr&aacute;mite de pr&eacute;stamo y entrega del libro.</li>
         <li style="text-align: justify; text-transform: capitalize;">Informar a la Unidad de Igualdad de G&eacute;nero y Erradicaci&oacute;n de la Violencia, cualquier desperfecto o incidente con el libro.</li>
