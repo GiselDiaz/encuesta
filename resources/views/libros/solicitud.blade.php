@@ -13,20 +13,14 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
 
 
         <div class="card">
             <div class="card-content">
-
-
                 <div class="row">
                     <div class="input-field col m4">
-
-
-
                         <br>
                         <br>
                         <br>
@@ -35,8 +29,6 @@
                              style="width: 100%; " alt="name" class="circle"
                              title="Titulo: {{ $libro->nombre }} / Autor: {{ $libro->autor }}">
                         <br>
-
-
                     </div>
 
                     <div class="input-field col m8">
@@ -87,6 +79,20 @@
                                 <div class="form-group">
                                     <label class="control-label"><strong>Fecha de entrega del libro: </strong></label>
                                     {!! Form::date('libro[fecha_entrega_usuario]', null, ['class' => 'form-control text-uppercase','id' => 'fecha_entrega_usuario', 'name' => 'fecha_entrega_usuario', 'required' =>true]) !!}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col m6">
+                                <div class="form-group">
+                                    <label class="control-label"><strong>Número de contacto: </strong></label>
+                                    {!! Form::number('libro[contacto]',null, ['class' => 'form-control text-uppercase','placeholder' => 'P. EJ. 7229458601', 'id' => 'contacto', 'name' => 'contacto', 'required' =>true]) !!}
+                                </div>
+                            </div>
+                            <div class="input-field col m6">
+                                <div class="form-group">
+                                    <label class="control-label"><strong>Folio de gafete oficial: </strong></label>
+                                    {!! Form::text('libro[gafete]', null, ['class' => 'form-control text-uppercase','id' => 'gafete','placeholder' => 'P. EJ. ', 'name' => 'gafete', 'required' =>true]) !!}
                                 </div>
                             </div>
                         </div>

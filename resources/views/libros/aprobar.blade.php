@@ -55,6 +55,23 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="input-field col m6">
+                                <div class="form-group">
+                                    <label class="control-label"><strong>Número de contaco Servidor Público: </strong></label>
+                                    {!! Form::text('libro[libro]', $solicitud->contacto, ['class' => 'form-control text-uppercase','id' => 'libro', 'name' => 'libro', 'readonly'=>true]) !!}
+                                </div>
+                            </div>
+                            <div class="input-field col m6">
+                                <div class="form-group">
+                                    <label class="control-label"><strong>Folio de gafete oficial:  </strong></label>
+                                    {!! Form::text('libro[libro]', $solicitud->gafete, ['class' => 'form-control text-uppercase','id' => 'libro', 'name' => 'libro', 'readonly'=>true]) !!}
+                                </div>
+                            </div>
+                        </div>
+
+
                         <div class="row">
                             <div class="input-field col m4">
                                 <div class="form-group">

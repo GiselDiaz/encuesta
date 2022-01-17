@@ -251,26 +251,23 @@ padding-left: 20px;
 
     </style>
 </head>
+<header>
+    <br>
+    <center>
+        <div class="row">
+            <img src="{{ asset('genero/images/logo/genero_header.png') }}" alt=" avatar" style="width: 100%;" />
 
-<body>
-    <header>
-        <br>
-        <center>
-            <div class="row">
-                <img src="{{ asset('genero/images/logo/librosg.png') }}" alt=" avatar" style="width: 40%;" />
-
-            </div>
-
-        </center>
-    </header>
-    <main>
-        <div class="card-header">
-            <h2 style="text-align: center; text-transform: capitalize;">
-                <br><b>Formato de préstamo de libro(s)</b>
-            </h2>
         </div>
 
-
+    </center>
+</header>
+<body>
+        <div class="card-header">
+            <h1 style="text-align: left; text-transform: capitalize;">
+                <br><b>Formato de préstamo de libro(s)</b>
+            </h1>
+            <hr>
+        </div>
         <h2 style="text-align: left; text-transform: capitalize; color:rgb(150,0,72);">
             <br><b>1.- Persona servidora pública solicitante </b>
         </h2>
@@ -278,20 +275,26 @@ padding-left: 20px;
         <table width="100%" border="1" cellpadding="4">
             <tbody>
                 <tr>
-                    <td align="left" width="100%"> NOMBRE: <STRONG>{{$sp[0]->Nombre}}</STRONG>
-                    </td>
+                    <td align="left" width="100%">Nombre: <STRONG>{{$sp[0]->Nombre}}</STRONG></td>
                 </tr>
                 <tr>
-                    <td align="left" width="100%">DEPENDENCIA: <strong>{{$dir->Nombre}} </strong> </td>
+                    <td align="left" width="100%">Dependencia: <strong>{{$depe->Nombre}} </strong> </td>
                 </tr>
                 <tr>
-                    <td align="left" width="100%">DEPARTAMENTO: <strong> {{$departamento->Nombre}}</strong> </td>
+                    <td align="left" width="100%">Dirección: <strong> {{$dir->nombre_completo}}</strong> </td>
+                </tr>
+                <tr>
+                    <td align="left" width="100%">Departamento: <strong> {{$departamento->nombre_completo}}</strong> </td>
+                </tr>
+                <tr>
+                    <td align="left" width="100%">Número de contacto: <strong> {{$data->contacto}}</strong> </td>
+                </tr>
+                <tr>
+                    <td align="left" width="100%">Folio de gafete oficial: <strong> {{$data->gafete}}</strong> </td>
                 </tr>
 
             </tbody>
         </table>
-
-
 
         <h2 style="text-align: left; text-transform: capitalize; color:rgb(150,0,72);">
             <br><b>2.- Datos del libro </b>
@@ -300,17 +303,22 @@ padding-left: 20px;
         <table width="100%" border="1" cellpadding="4">
             <tbody>
                 <tr>
-                    <td align="left" width="100%">TÍTULO: <STRONG>{{$data->libros->nombre}}</STRONG>
+                    <td align="left" width="100%">Título: <STRONG>{{$data->libros->nombre}}</STRONG>
                     </td>
                 </tr>
-
                 <tr>
-                    <td align="left" width="100%">FECHA DE PRÉSTAMO: <strong> {{ \Carbon\Carbon::parse($data->created_at)->format('d-m-Y')}}</strong> </td>
+                    <td align="left" width="100%">Número: <STRONG> UIGyEv-00{{$data->libros->id}}-0{{count($num)}}</STRONG>
+                    </td>
                 </tr>
                 <tr>
-                    <td align="left" width="100%">FECHA DE DECOLUCIÓN: <strong> {{ \Carbon\Carbon::parse($data->fecha_entrega_usuario)->format('d-m-Y')}}</strong> </td>
+                    <td align="left" width="100%">Fecha de préstamo: <strong> {{ \Carbon\Carbon::parse($data->created_at)->format('d-m-Y')}}</strong> </td>
                 </tr>
-
+                <tr>
+                    <td align="left" width="100%">Fecha de devolución: <strong> {{ \Carbon\Carbon::parse($data->fecha_entrega_usuario)->format('d-m-Y')}}</strong> </td>
+                </tr>
+                <tr>
+                    <td align="left" width="100%">Observaciones: <STRONG>{{$data->libros->nombre}}</STRONG></td>
+                </tr>
             </tbody>
         </table>
         <br><br><br><br>
@@ -324,12 +332,6 @@ padding-left: 20px;
         <br><br><br><br><br><br><br><br>
         <br><br><br><br><br><br><br><br>
         <br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br>
-
-
-
-
-
 
             <table>
 
@@ -362,26 +364,18 @@ padding-left: 20px;
                         </b>
                     </td>
                 </tr>
-
-
             </table>
-
-
-
-
-    </main>
     <br>
     <br>
     <br>
-    <footer>
 
-        <center>
-            <div class="row">
-                <img src="{{ asset('genero/images/logo/membrete3.png') }}" alt=" avatar" style="width: 90%;" />
-            </div>
-
-        </center>
-    </footer>
 </body>
+<footer>
+    <center>
+        <div class="row">
+            <img src="{{ asset('genero/images/logo/membrete3.png') }}" alt=" avatar" style="width: 90%;" />
+        </div>
 
+    </center>
+</footer>
 </html>
