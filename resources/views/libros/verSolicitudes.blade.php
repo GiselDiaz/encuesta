@@ -14,7 +14,7 @@
                                 <table id="page-length-option" class="display">
                                     <thead>
                                     <tr>
-                                        <th>Titulo</th>
+                                        <th style="width: 60%">Titulo</th>
                                         <th>Estatus</th>
                                         <th>Acción</th>
                                     </tr>
@@ -22,7 +22,7 @@
                                     <tbody>
                                         @foreach ( $libros as $libro)
                                             <tr>
-                                                <td>
+                                                <td style="width: 60%">
                                                     <p style="text-align: left;">{{$libro->nombre}}</p>
                                                 </td>
                                                 <td>
@@ -37,33 +37,8 @@
                                                        href="{{ route('verLibrosAprobar', [$libro->id]) }}">
                                                         <i class="material-icons iconlegislatura">visibility</i>
                                                     </a>
-
-
-
-                                                    {{--
-                                                      @if(isset($libro->status))--}}
-{{--                                                         @if ($libro->status == 'Pendiente por aprobar')--}}
-{{--                                                            <a title="aprobar" class="tooltipped" data-position="bottom" data-tooltip="Aprobar"--}}
-{{--                                                               href="{{ route('aprobar', [$libro->id]) }}">--}}
-{{--                                                                <i class="material-icons iconlegislatura">visibility</i>--}}
-{{--                                                            </a>--}}
-
-{{--                                                        @elseif($libro->status == 'Prestado')--}}
-{{--                                                            <a title="ver" class="tooltipped" data-position="bottom" data-tooltip="Ver"--}}
-{{--                                                               href="{{ route('pdf', [$libro->id])}}">--}}
-{{--                                                                <i class="material-icons iconlegislatura">visibility</i>--}}
-{{--                                                            </a>--}}
-
-{{--                                                            <a  title="PDF" data-position="bottom" data-tooltip="PDF"--}}
-{{--                                                            onclick="pdf({{$libro->id}});" class=" tooltipped ">--}}
-{{--                                                             <i class="material-icons iconlegislatura">picture_as_pdf</i>--}}
-{{--                                                         </a>--}}
-{{--                                                        @endif--}}
-{{--                                                    @endif--}}
-
                                                 </td>
                                             </tr>
-
                                         @endforeach
                                     </tbody>
                                 </table>
