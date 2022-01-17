@@ -317,7 +317,7 @@ padding-left: 20px;
                     <td align="left" width="100%">Fecha de devolución: <strong> {{ \Carbon\Carbon::parse($data->fecha_entrega_usuario)->format('d-m-Y')}}</strong> </td>
                 </tr>
                 <tr>
-                    <td align="left" width="100%">Observaciones: <STRONG>{{$data->libros->nombre}}</STRONG></td>
+                    <td align="left" width="100%">Observaciones: <STRONG>{{$data->observaciones}}</STRONG></td>
                 </tr>
             </tbody>
         </table>
