@@ -10,7 +10,7 @@
                     <div class="section section-data-tables">
                         <div class="row">
                             <div class="col s12">
-                                <h4 class="text-align center">Prestamo de libros </h4>
+                                <h4 class="text-align center">Préstamo de libro(s) </h4>
                                 <table id="page-length-option" class="display">
                                     <thead>
                                     <tr>
@@ -29,7 +29,7 @@
                                                 @if($libro->status == 0)
                                                     <p>Pendiente por aprobar</p>
                                                 @elseif($libro->status == 1)
-                                                    <p>Pestado</p>
+                                                    <p>Prestado</p>
                                                 @endif
                                             </td>
                                             <td>

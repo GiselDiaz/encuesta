@@ -10,7 +10,7 @@
                     <div class="section section-data-tables">
                         <div class="row">
                             <div class="col s12">
-                                <h4 class="text-align center">Aprobación de prestamo</h4>
+                                <h4 class="text-align center">Aprobación de préstamo</h4>
                             </div>
                         </div>
                         {!! Form::open(['route' => ['libros.update', $solicitud->id], 'method' => 'PUT', 'role' => 'form', 'id' => 'frmSolitud']) !!}
@@ -18,7 +18,7 @@
                         <div class="row">
                             <div class="input-field col m4">
                                 <div class="form-group">
-                                    <label class="control-label"><strong>Libro solicidado: </strong></label>
+                                    <label class="control-label"><strong>Libro solicitado: </strong></label>
                                     {!! Form::text('libro[libro]', $solicitud->libros->nombre, ['class' => 'form-control text-uppercase','id' => 'libro', 'name' => 'libro', 'readonly'=>true]) !!}
                                 </div>
                             </div>
@@ -59,7 +59,7 @@
                         <div class="row">
                             <div class="input-field col m6">
                                 <div class="form-group">
-                                    <label class="control-label"><strong>Número de contaco Servidor Público: </strong></label>
+                                    <label class="control-label"><strong>Número de contacto persona servidora pública solicitante: </strong></label>
                                     {!! Form::text('libro[libro]', $solicitud->contacto, ['class' => 'form-control text-uppercase','id' => 'libro', 'name' => 'libro', 'readonly'=>true]) !!}
                                 </div>
                             </div>
@@ -75,7 +75,7 @@
                         <div class="row">
                             <div class="input-field col m4">
                                 <div class="form-group">
-                                    <label class="control-label"><strong>Fecha limite de entrega del libro asignada por sistema: </strong></label>
+                                    <label class="control-label"><strong>Fecha límite de entrega del libro asignada por sistema: </strong></label>
                                     {!! Form::text('libro[libro]', $solicitud->fecha_entrega_sistema, ['class' => 'form-control text-uppercase','id' => 'libro', 'name' => 'libro', 'readonly'=>true]) !!}
                                 </div>
                             </div>
