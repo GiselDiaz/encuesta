@@ -11,11 +11,10 @@
                         <div class="row">
                             <div class="col s12">
                                 <h4 class="text-align center">Préstamo de libro(s)</h4>
-                                <p>Espacio cultural diseñado para las personas servidoras públicas del Poder Legislativo, cuyo propósito es promover y fomentar la práctica de la lectura con bibliografía especializada sobre diversos estudios y compendios en materia de género, realizados por el Consejo Nacional para Prevenir la Discriminación CONAPRED.</p>
                                 <table id="page-length-option" class="display">
                                     <thead>
                                     <tr>
-                                        <th style="width: 60%">Título</th>
+                                        <th style="width: 30%">Título</th>
                                         <th>Estatus</th>
                                         <th>Libros Disponibles</th>
                                         <th>Acción</th>
@@ -24,7 +23,7 @@
                                     <tbody>
                                         @foreach ( $libros as $libro)
                                             <tr>
-                                                <td style="width: 60%">
+                                                <td style="width: 30%">
                                                     <p style="text-align: left;">{{$libro->nombre}}</p>
                                                 </td>
                                                 <td>

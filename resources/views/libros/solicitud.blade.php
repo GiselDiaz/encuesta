@@ -61,7 +61,7 @@
                             </div>
                             <div class="input-field col m6">
                                 <div class="form-group">
-                                    <label class="control-label"><strong>Fecha de recolección del libro: </strong></label>
+                                    <label class="control-label"><strong>Fecha de recolección: </strong></label>
                                     {!! Form::date('libro[fecha_recoleccion]',null, ['class' => 'form-control text-uppercase','id' => 'fecha_recoleccion', 'name' => 'fecha_recoleccion', 'min' => $todayDate, 'required' =>true]) !!}
                                 </div>
                             </div>
@@ -98,7 +98,7 @@
                         <div class="row">
                             <div class="input-field col m6">
                                 <div class="form-group">
-                                    <label class="control-label"><strong>Consulta <a href="https://legislativoedomex.gob.mx/documentos/avisosprivacidad/unidad-de-igualdad-de-genero-y-erradicacion-de-la-violencia.pdf" target="_blank" > aquí </a>el aviso de privacidad. </strong></label><br>
+                                    <label class="control-label"><strong>Consulta <a href="https://legislativoedomex.gob.mx/documentos/avisosprivacidad/unidad-de-igualdad-de-genero-y-erradicacion-de-la-violencia.pdf" target="_blank" > aquí </a>el aviso de privacidad. </strong></label>
                                     <label class="validate"> <strong>Acepto el uso y termino de condiciones  </strong>
                                         <input class="with-gap" name="aviso" id="aviso" type="checkbox" value="1" required/>
                                         <span></span>

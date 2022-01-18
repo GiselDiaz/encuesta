@@ -114,7 +114,7 @@ class LibrosController extends Controller
     }
 
     public function solicitudes(){
-        $libros = Libros::all();
+        $libros = Libros::orderBy('id', 'DESC')->get();
         foreach ($libros as $libro){
             $solicitudes = Solicitud::where('status','!=','2')->where('libro_id', $libro->id)->first();
             if ($solicitudes){

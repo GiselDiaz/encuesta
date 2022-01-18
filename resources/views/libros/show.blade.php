@@ -45,6 +45,17 @@
                         </div>
                     </div>
                 </div>
+
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                            <div class="modal-content">
+                                <p style="font-size:18px; text-align: justify;"><strong>Espacio cultural diseñado para las personas servidoras públicas del Poder Legislativo, cuyo propósito es promover y fomentar la práctica de la lectura
+                                        con bibliografía especializada sobre diversos estudios y compendios en materia de género, realizados por el Consejo Nacional para Prevenir la Discriminación CONAPRED.</strong></p>
+                            </div>
+                        <div class="modal-footer"><a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+                        </div>
+                    </div>
+
                 <div id='showLib' style="display: none;"></div>
                 <div id='showLib1'>
                     <br><br>
@@ -112,6 +123,8 @@
         });
         // Or with jQuery
         $(document).ready(function () {
+            $("#modal1").modal();
+            $('#modal1').modal('open');
             $('.materialboxed').materialbox();
         });
 
