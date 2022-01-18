@@ -272,11 +272,11 @@ padding-left: 20px;
 </header>
 <body>
 
-        <h1 style="text-align: left; text-transform: capitalize;">
+        <h1 style="text-align: left;">
             <br><b>Formato de préstamo de libro(s)</b>
         </h1>
         <hr>
-       
+
         <h2 style="text-align: left; color:rgb(150,0,72);">
             <br><b>1.- Persona servidora pública solicitante </b>
         </h2>
