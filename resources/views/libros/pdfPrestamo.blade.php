@@ -316,7 +316,7 @@ padding-left: 20px;
                     </td>
                 </tr>
                 <tr>
-                    <td align="left" width="100%">Número: <STRONG> UIGyEv-00{{$data->libros->id}}-0{{count($num)}}</STRONG>
+                    <td align="left" width="100%">Número: <STRONG> UIGyEV-00{{$data->libros->id}}-0{{count($num)}}</STRONG>
                     </td>
                 </tr>
                 <tr>
@@ -331,9 +331,9 @@ padding-left: 20px;
             </tbody>
         </table>
         <br><br><br><br>
-        <p style="text-align: left;"><strong >La Persona servidora p&uacute;blica solicitante deber&aacute;:</strong></p>
+        <p style="text-align: left;"><strong >Me comprometo a:</strong></p>
         <ul>
-        <li style="text-align: justify;">Acudir personalmente a la Unidad de Igualdad de G&eacute;nero y Erradicaci&oacute;n de la Violencia, a efecto de realizar el tr&aacute;mite de pr&eacute;stamo y entrega del libro.</li>
+{{--        <li style="text-align: justify;">Acudir personalmente a la Unidad de Igualdad de G&eacute;nero y Erradicaci&oacute;n de la Violencia, a efecto de realizar el tr&aacute;mite de pr&eacute;stamo y entrega del libro.</li>--}}
         <li style="text-align: justify;">Informar a la Unidad de Igualdad de G&eacute;nero y Erradicaci&oacute;n de la Violencia, cualquier desperfecto o incidente con el libro.</li>
         <li style="text-align: justify;">No maltratar, doblar, subrayar, manchar, arrancar hojas o im&aacute;genes del libro.</li>
         <li style="text-align: justify;">Contemplar que el per&iacute;odo de pr&eacute;stamo es por 30 d&iacute;as, en su caso, podr&aacute; realizar la renovaci&oacute;n del per&iacute;odo en caso de disponibilidad.</li>
@@ -357,7 +357,7 @@ padding-left: 20px;
                 <tr>
                     <td WIDTH="150" class="firma">
                         <b>
-                            Nombre y firma de lector(a)
+                            Nombre y firma de la <STRONG>persona servidora pública solicitante</STRONG>
                             <br>
 
                         </b>

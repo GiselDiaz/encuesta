@@ -10,7 +10,8 @@
                     <div class="section section-data-tables">
                         <div class="row">
                             <div class="col s12">
-                                <h4 class="text-align center">Préstamo de libros</h4>
+                                <h4 class="text-align center">Préstamo de libro(s)</h4>
+                                <p>Espacio cultural diseñado para las personas servidoras públicas del Poder Legislativo, cuyo propósito es promover y fomentar la práctica de la lectura con bibliografía especializada sobre diversos estudios y compendios en materia de género, realizados por el Consejo Nacional para Prevenir la Discriminación CONAPRED.</p>
                                 <table id="page-length-option" class="display">
                                     <thead>
                                     <tr>
