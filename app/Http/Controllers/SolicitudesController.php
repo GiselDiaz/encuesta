@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Departamento;
+use App\Models\Dependencia;
+use App\Models\Direccion;
 use App\Models\Libros;
+use App\Models\ServidoresPublicosCentralizada;
 use App\Models\Solicitud;
+use Barryvdh\DomPDF\Facade as PDF;
+use Carbon\Carbon;
 use Facade\Ignition\SolutionProviders\DefaultDbNameSolutionProvider;
 use http\Exception;
 use Illuminate\Http\Request;
@@ -52,9 +58,17 @@ class SolicitudesController extends Controller
             $fecha_entrega_sistema = date("Y-m-d",strtotime($fecha_actual."+ 30 days"));
             $registro['solicitante'] = $Us->N_Usuario;
             $registro['fecha_entrega_sistema'] = $fecha_entrega_sistema;
-            $libros = Solicitud::create($registro);
+            $data = Solicitud::create($registro);
         }
-        return redirect('libros');
+
+
+        $sp =  ServidoresPublicosCentralizada::where('Estado',1)->where('N_Usuario', $Us->N_Usuario)->get();
+        $depe=  Dependencia::where('id_Dependencia',$sp[0]->id_Dependencia)->first();
+        $dir =  Direccion::where('id_Direccion',$sp[0]->id_Direccion)->first();
+        $departamento =  Departamento::where('id_Departamento', $sp[0]->id_Departamento)->first();
+        $num = Solicitud::where('status',1)->where('libro_id',$data->libro_id)->get();
+        $pdf = PDF::loadView('libros.pdfPrestamo', compact('data','dir','departamento','sp','depe','num'));
+        return $pdf->stream('dependencia.pdf');
     }
 
     /**
@@ -105,6 +119,7 @@ class SolicitudesController extends Controller
     public function solicitar($id){
         $servidorP = auth()->user()->servidorPublico;
         $libro = Libros::find($id);
-        return view('libros.create', compact('servidorP','libro'));
+        $todayDate = Carbon::now()->format('Y-m-d');
+        return view('libros.create', compact('servidorP','libro','todayDate'));
     }
 }

@@ -10,12 +10,13 @@
                     <div class="section section-data-tables">
                         <div class="row">
                             <div class="col s12">
-                                <h4 class="text-align center">Prestamo de libros</h4>
+                                <h4 class="text-align center">Préstamo de libros</h4>
                                 <table id="page-length-option" class="display">
                                     <thead>
                                     <tr>
-                                        <th style="width: 60%">Titulo</th>
+                                        <th style="width: 60%">Título</th>
                                         <th>Estatus</th>
+                                        <th>Libros Disponibles</th>
                                         <th>Acción</th>
                                     </tr>
                                     </thead>
@@ -31,6 +32,9 @@
                                                     @else
                                                         <p>Diponible</p>
                                                     @endif
+                                                </td>
+                                                <td>
+                                                    {{$libro->stock}}
                                                 </td>
                                                 <td>
                                                     <a title="ver" class="tooltipped" data-position="bottom" data-tooltip="ver"

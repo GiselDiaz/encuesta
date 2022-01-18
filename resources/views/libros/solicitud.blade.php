@@ -61,24 +61,22 @@
                             </div>
                             <div class="input-field col m6">
                                 <div class="form-group">
-                                    <label class="control-label"><strong>Fecha de recolección del
-                                            libro: </strong></label>
-                                    {!! Form::date('libro[fecha_recoleccion]',null, ['class' => 'form-control text-uppercase','id' => 'fecha_recoleccion', 'name' => 'fecha_recoleccion', 'required' =>true]) !!}
+                                    <label class="control-label"><strong>Fecha de recolección del libro: </strong></label>
+                                    {!! Form::date('libro[fecha_recoleccion]',null, ['class' => 'form-control text-uppercase','id' => 'fecha_recoleccion', 'name' => 'fecha_recoleccion', 'min' => $todayDate, 'required' =>true]) !!}
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col m6">
                                 <div class="form-group">
-                                    <label class="control-label"><strong>Hora de recolección del
-                                            libro: </strong></label>
+                                    <label class="control-label"><strong>Hora de recolección del libro: </strong></label>
                                     {!! Form::time('libro[hora_recoleccion]',null, ['class' => 'form-control text-uppercase','id' => 'hora_recoleccion', 'name' => 'hora_recoleccion', 'required' =>true]) !!}
                                 </div>
                             </div>
                             <div class="input-field col m6">
                                 <div class="form-group">
                                     <label class="control-label"><strong>Fecha de entrega del libro: </strong></label>
-                                    {!! Form::date('libro[fecha_entrega_usuario]', null, ['class' => 'form-control text-uppercase','id' => 'fecha_entrega_usuario', 'name' => 'fecha_entrega_usuario', 'required' =>true]) !!}
+                                    {!! Form::date('libro[fecha_entrega_usuario]', null, ['class' => 'form-control text-uppercase','id' => 'fecha_entrega_usuario', 'name' => 'fecha_entrega_usuario', 'min' => $todayDate, 'required' =>true]) !!}
                                 </div>
                             </div>
                         </div>
@@ -112,6 +110,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 
