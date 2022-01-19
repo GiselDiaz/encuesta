@@ -46,9 +46,10 @@ class SolicitudesController extends Controller
     {
         $Us = auth()->user()->servidorPublico;
         $registro = $request ->except('_token');
-    //    dd($registro);
+        //dd($registro);
         $libro = Libros::find($registro['libro_id']);
         $stock =$libro['stock'];
+       
         if ($stock >0){
             $stock = $stock -1;
             $lib['stock'] = $stock;

@@ -11067,7 +11067,7 @@ input[type=range]::-ms-thumb
     padding: 20px 22px;
 
     color: #fff;
-    background-color: #03a9f4;
+    background-color: rgb(150,0,72);
 
     -webkit-box-flex: 1;
     -webkit-flex: 1 auto;
