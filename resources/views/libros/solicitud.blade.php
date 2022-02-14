@@ -8,8 +8,7 @@
                 <div class="col s12">
                     <div class="card-content">
                         <center>
-                            <img style="width: 90%;"
-                                 src="{{ asset('genero/images/logo/banner_logos.png' ) }}">
+                            <img style="width: 90%; height: 50%;" src="{{ asset('genero/images/logo/saf_espacio.png') }}">
                         </center>
                     </div>
                 </div>
@@ -152,7 +151,7 @@
                 weekdaysShort: ["Dom","Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
                 weekdaysAbbrev: ["D","L", "M", "M", "J", "V", "S"]
             }
-        });       
+        });
     });
 </script>
 @endpush
