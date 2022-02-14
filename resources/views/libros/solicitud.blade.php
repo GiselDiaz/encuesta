@@ -2,7 +2,6 @@
 <div class="container">
     <div class="section">
 
-
         <div class="row"  style="background-color: rgba(198, 198, 198, .5);">
             <div class="row">
                 <div class="col s12">
@@ -34,22 +33,25 @@
                     <div class="input-field col m8">
 
                         <div class="row">
-                            <h1>Formato de préstamo de libro(s)</h1>
+{{--                            <h1>Formato de préstamo de libro(s)</h1>--}}
 
-                            La <strong>persona servidora pública solicitante</strong> deberá:
-                            <ol>
-                                <li>Acudir personalmente a la Unidad de Igualdad de Género y Erradicación de la
-                                    Violencia, a efecto de concluir el trámite de préstamo y entrega del libro.
-                                </li>
-                                <li>Informar a la Unidad de Igualdad de Género y Erradicación de la Violencia, cualquier
-                                    desperfecto o incidente con el libro.
-                                </li>
-                                <li>No maltratar, doblar, subrayar, manchar, arrancar hojas o imágenes del libro.</li>
-                                <li>Contemplar que el período de préstamo es por 30 días, en su caso, podrá realizar la
-                                    renovación del período en caso de disponibilidad.
-                                </li>
-
-                            </ol>
+{{--                            La <strong>persona servidora pública solicitante</strong> deberá:--}}
+{{--                            <ol>--}}
+{{--                                <li>Acudir personalmente a la Unidad de Igualdad de Género y Erradicación de la--}}
+{{--                                    Violencia, a efecto de concluir el trámite de préstamo y entrega del libro.--}}
+{{--                                </li>--}}
+{{--                                <li>Informar a la Unidad de Igualdad de Género y Erradicación de la Violencia, cualquier--}}
+{{--                                    desperfecto o incidente con el libro.--}}
+{{--                                </li>--}}
+{{--                                <li>No maltratar, doblar, subrayar, manchar, arrancar hojas o imágenes del libro.</li>--}}
+{{--                                <li>Contemplar que el período de préstamo es por 30 días, en su caso, podrá realizar la--}}
+{{--                                    renovación del período en caso de disponibilidad.--}}
+{{--                                </li>--}}
+{{--                                <li>Revise que los datos capturados sean correctos haga clic en Guardar.</li>--}}
+{{--                                <li>Descargue, imprima y firme el formato.</li>--}}
+{{--                                <li>Debe dirigirse al icono ubicado en el margen superior y haga clic para cerrar sesión.</li>--}}
+{{--                                <li>Presentar el formato firmado en la Unidad de Igualdad de Género  y Erradicación de la Violencia paa concluir el trámite de préstamo.</li>--}}
+{{--                            </ol>--}}
 
 
                             <div class="input-field col m6">
@@ -96,12 +98,29 @@
                         </div>
 
                         <div class="row">
+                            <div class="input-field col m10">
+                                <div class="form-group">
+                                    <label>Llene el formato electrónico de préstamo, consulte el aviso de privacidad <a href="https://legislativoedomex.gob.mx/documentos/avisosprivacidad/unidad-de-igualdad-de-genero-y-erradicacion-de-la-violencia.pdf" target="_blank" > aquí </a> y revise las considiciones de préstamo. </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
                             <div class="input-field col m6">
                                 <div class="form-group">
-                                    <label class="control-label"><strong>Consulta <a href="https://legislativoedomex.gob.mx/documentos/avisosprivacidad/unidad-de-igualdad-de-genero-y-erradicacion-de-la-violencia.pdf" target="_blank" > aquí </a>el aviso de privacidad. </strong></label>
-                                    <label class="validate"> <strong>Acepto el uso y termino de condiciones  </strong>
-                                        <input class="with-gap" name="aviso" id="aviso" type="checkbox" value="1" required/>
-                                        <span></span>
+                                    <label class="validate">
+                                    <input class="with-gap" name="aviso" id="aviso" type="checkbox" value="1" required/> <span></span>
+                                        <strong>He leído el aviso de privacidad </strong>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col m6">
+                                <div class="form-group">
+                                    <label class="validate">
+                                    <input class="with-gap1" name="terminos" id="terminos" type="checkbox" value="1" required/> <span></span>
+                                        <strong>Acepto el uso y termino de condiciones  </strong>
                                     </label>
                                 </div>
                             </div>
