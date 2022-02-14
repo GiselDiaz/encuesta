@@ -332,12 +332,16 @@ padding-left: 20px;
         </table>
         <br><br><br><br>
         <p style="text-align: left;"><strong >Me comprometo a:</strong></p>
-        <ul>
+        <ol>
 {{--        <li style="text-align: justify;">Acudir personalmente a la Unidad de Igualdad de G&eacute;nero y Erradicaci&oacute;n de la Violencia, a efecto de realizar el tr&aacute;mite de pr&eacute;stamo y entrega del libro.</li>--}}
         <li style="text-align: justify;">Informar a la Unidad de Igualdad de G&eacute;nero y Erradicaci&oacute;n de la Violencia, cualquier desperfecto o incidente con el libro.</li>
         <li style="text-align: justify;">No maltratar, doblar, subrayar, manchar, arrancar hojas o im&aacute;genes del libro.</li>
         <li style="text-align: justify;">Contemplar que el per&iacute;odo de pr&eacute;stamo es por 30 d&iacute;as, en su caso, podr&aacute; realizar la renovaci&oacute;n del per&iacute;odo en caso de disponibilidad.</li>
-        </ul>
+        <li style="text-align: justify;">Revise que los datos capturados sean correctos haga clic en Guardar.</li>
+        <li style="text-align: justify;">Descargue, imprima y firme el formato.</li>
+        <li style="text-align: justify;">Debe dirigirse al icono ubicado en el margen superior y haga clic para cerrar sesión.</li>
+        <li style="text-align: justify;">Presentar el formato firmado en la Unidad de Igualdad de Género  y Erradicación de la Violencia paa concluir el trámite de préstamo.</li>
+        </ol>
         <br><br><br><br><br><br><br><br>
 
 

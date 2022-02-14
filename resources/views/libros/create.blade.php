@@ -24,11 +24,21 @@
 
         $("#aviso").on("change", function () {
             if($("#aviso").is(':checked')) {
-                document.getElementById("bot").style.display = 'block';
+                if($("#terminos").is(':checked')) {
+                    document.getElementById("bot").style.display = 'block';
+                }
             } else {
                 document.getElementById("bot").style.display = 'none';
             }
-
+        });
+        $("#terminos").on("change", function () {
+            if($("#terminos").is(':checked')) {
+                if($("#aviso").is(':checked')) {
+                    document.getElementById("bot").style.display = 'block';
+                }
+            } else {
+                document.getElementById("bot").style.display = 'none';
+            }
         });
     </script>
 @endpush
