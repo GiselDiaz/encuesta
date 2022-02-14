@@ -316,7 +316,7 @@ padding-left: 20px;
                     </td>
                 </tr>
                 <tr>
-                    <td align="left" width="100%">Número: <STRONG> UIGyEV-00{{$data->libros->id}}-0{{count($num)}}</STRONG>
+                    <td align="left" width="100%">Número: <STRONG> UIGyEV-00{{$data->libros->id}}-0 @if(count($num) == 0)1 @else{{count($num)}} @endif </STRONG>
                     </td>
                 </tr>
                 <tr>
