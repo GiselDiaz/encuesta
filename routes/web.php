@@ -29,6 +29,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('getdireccion/{dependencia_id}', [ReporteController::class, 'obtenerDireccion']);
     Route::get('getDep/{id}', [ReporteController::class, 'getDep']);
     Route::get('getdepartamento/{direccion_id}', [ReporteController::class, 'obtenerDepto']);
+
+
+    Route::GET('saveDataSolicitud', 'App\Http\Controllers\SolicitudesController@saveDataSolicitud')->name('saveDataSolicitud');
+
     route::post("pdf/dependencia", [ReporteController::class, "pdfDependencia"])->name('pdf.dependencia');
     Route::GET('verReporte/{id}', 'App\Http\Controllers\ReporteController@verReporte')->name('verReporte');
     Route::get('imprimir/{id}', [ReporteController::class, 'generarExcel']);
