@@ -4,9 +4,9 @@
 @endsection
 @section('content')
     <div class="card-body">
-        {!! Form::open(['route'=>'solicitud.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => '']) !!}
+        {{-- {!! Form::open(['route'=>'solicitud.store', 'method'=>'POST', 'files' => true, 'role' => 'form', 'id' => '']) !!} --}}
         @include('libros.solicitud')
-        {!! Form::close() !!}
+        {{-- {!! Form::close() !!} --}}
     </div>
 @endsection
 @push('scripts')
@@ -22,24 +22,24 @@
             $('.materialboxed').materialbox();
         });
 
-        $("#aviso").on("change", function () {
-            if($("#aviso").is(':checked')) {
-                if($("#terminos").is(':checked')) {
-                    document.getElementById("bot").style.display = 'block';
-                }
-            } else {
-                document.getElementById("bot").style.display = 'none';
-            }
-        });
-        $("#terminos").on("change", function () {
-            if($("#terminos").is(':checked')) {
-                if($("#aviso").is(':checked')) {
-                    document.getElementById("bot").style.display = 'block';
-                }
-            } else {
-                document.getElementById("bot").style.display = 'none';
-            }
-        });
+        // $("#aviso").on("change", function () {
+        //     if($("#aviso").is(':checked')) {
+        //         if($("#terminos").is(':checked')) {
+        //             document.getElementById("bot").style.display = 'block';
+        //         }
+        //     } else {
+        //         document.getElementById("bot").style.display = 'none';
+        //     }
+        // });
+        // $("#terminos").on("change", function () {
+        //     if($("#terminos").is(':checked')) {
+        //         if($("#aviso").is(':checked')) {
+        //             document.getElementById("bot").style.display = 'block';
+        //         }
+        //     } else {
+        //         document.getElementById("bot").style.display = 'none';
+        //     }
+        // });
     </script>
 @endpush
 

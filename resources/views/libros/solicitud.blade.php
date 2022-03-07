@@ -63,22 +63,25 @@
                             </div>
                             <div class="input-field col m6">
                                 <div class="form-group">
-                                    <label class="control-label"><strong>Fecha de recolección: </strong></label>
-                                    {!! Form::date('libro[fecha_recoleccion]',null, ['class' => 'form-control text-uppercase','id' => 'fecha_recoleccion', 'name' => 'fecha_recoleccion', 'min' => $todayDate, 'required' =>true]) !!}
+
+                                    <label class="control-label"><strong>Hora de recolección: </strong></label>
+                                    {!! Form::time('libro[hora_recoleccion]',null, ['class' => 'form-control timepicker','id' => 'hora_recoleccion', 'name' => 'hora_recoleccion', 'required' =>true]) !!}
+
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col m6">
                                 <div class="form-group">
-                                    <label class="control-label"><strong>Hora de recolección: </strong></label>
-                                    {!! Form::time('libro[hora_recoleccion]',null, ['class' => 'form-control text-uppercase','id' => 'hora_recoleccion', 'name' => 'hora_recoleccion', 'required' =>true]) !!}
+                                    <label class="control-label"><strong>Fecha de recolección: </strong></label>
+                                    {!! Form::text('libro[fecha_recoleccion]',null, ['class' => 'form-control','id' => 'fecha_recoleccion', 'name' => 'fecha_recoleccion', 'min' => $todayDate, 'required' =>true]) !!}
+
                                 </div>
                             </div>
                             <div class="input-field col m6">
                                 <div class="form-group">
                                     <label class="control-label"><strong>Fecha de entrega: </strong></label>
-                                    {!! Form::date('libro[fecha_entrega_usuario]', null, ['class' => 'form-control text-uppercase','id' => 'fecha_entrega_usuario', 'name' => 'fecha_entrega_usuario', 'min' => $todayDate, 'required' =>true]) !!}
+                                    {!! Form::text('libro[fecha_entrega_usuario]', null, ['class' => 'form-control text-uppercase','id' => 'fecha_entrega_usuario', 'name' => 'fecha_entrega_usuario', 'min' => $todayDate, 'required' =>true]) !!}
                                 </div>
                             </div>
                         </div>
@@ -128,7 +131,7 @@
                         <div class="row" id="bot" style="display: none;">
                             <div class="input-field col m12">
                                 <center>
-                                    <button class="waves-effect waves-dark btn btn-primary" type="submit" id="b1" style="background-color: #ec731e; border-radius: 10px;">
+                                    <button class="waves-effect waves-dark btn btn-primary" onclick="enviarData()" type="submit" id="b1" style="background-color: #ec731e; border-radius: 10px;">
                                         Guardar
                                     </button>
                                 </center>
@@ -136,6 +139,53 @@
                         </div>
                     </div>
                 </div>
+
+
+
+
+
+                <!-- Modal 111111111111111111 -->
+                <div id="myModal" class="modal modal-fixed-footer">
+                  <div class="modal-content">
+                    {{-- <h4></h4> --}}
+                    <object data="https://legislativoedomex.gob.mx/documentos/avisosprivacidad/unidad-de-igualdad-de-genero-y-erradicacion-de-la-violencia.pdf" type="application/pdf" width="100%" height="800px"> </object>
+                  </div>
+                  <div class="modal-footer">
+                    <a onclick="cerrarMod1()" class=" waves-effect waves-green btn-flat">Aceptar</a>
+                  </div>
+                </div>
+
+
+                    <!-- Modal 222222222222222 -->
+                    <div id="myModal2" class="modal modal-fixed-footer">
+                        <div class="modal-content">
+                            <h2>Condiciones de Préstamo</h2>
+                            <p><strong style=" font-size: 20px; color: #96124B;">Me comprometo a:</strong></p>
+                            <br>
+
+                            <p><strong style=" font-size: 20px; color: #000; text-align: justify;">1. No maltratar, doblar, subrayar, manchar, arrancar hojas o
+                            imágenes del libro.</strong></p>
+                            <br>
+                            <p><strong style=" font-size: 20px; color: #000; text-align: justify;">2. Contemplar que el período de préstamo es por 30 días, en su caso,
+                            podrá realizar la renovación del período en caso de disponibilidad.</strong></p>
+
+                            <br>
+                            <p><strong style=" font-size: 20px; color: #000; text-align: justify;">3. Informar a la Unidad de Igualdad de Género y Erradicación de la
+                            Violencia, cualquier desperfecto o incidente con el libro.</strong></p>
+                            <br>
+                            <p><strong style=" font-size: 20px; color: #000; text-align: justify;">4. Devolver el ejemplar en la fecha señalada.</strong></p>
+
+                            <br>
+                            <p><strong style=" font-size: 20px; color: #000; text-align: justify;">5. Respetar las condiciones de préstamo.</strong></p>
+
+                        </div>
+                        <div class="modal-footer">
+                          <a onclick="cerrarMod2()" class=" waves-effect waves-green btn-flat">Aceptar</a>
+                        </div>
+                      </div>
+
+
+
             </div>
         </div>
     </div>
@@ -145,6 +195,80 @@
 
 @push('scripts')
 <script type="text/javascript">
+
+
+
+
+
+    function enviarData(){
+        let libro_id = $("#libro_id").val();
+        let libro = $("#libro").val();
+        let hora_recoleccion = $("#hora_recoleccion").val();
+        let fecha_recoleccion = $("#fecha_recoleccion").val();
+        let fecha_entrega_usuario = $("#fecha_entrega_usuario").val();
+        let contacto = $("#contacto").val();
+        let gafete = $("#gafete").val();
+        swal({
+                    title: "Atención, verifique que los datos proporcionados sean correctos: ",
+                    text: 'Nombre del Libro: ' + libro + '\n' + '\n' +
+                    'Hora de recolección: ' + hora_recoleccion + '\n' + '\n' +
+                    'Fecha de recolección: ' + fecha_recoleccion + '\n' + '\n' +
+                    'Fecha de entrega: ' + fecha_entrega_usuario + '\n' + '\n' +
+                    'Número de contato: ' + contacto + '\n' + '\n' +
+                    'Folio de gafete oficial: ' + gafete + '\n' ,
+                    icon: 'warning',
+                    dangerMode: true,
+                    buttons: {
+                        cancel: 'CANCELAR',
+                        accept: 'ACEPTAR'
+                    }
+                }).then(function(willDelete) {
+                    if (willDelete) {
+                        console.log('1');
+
+                        $.ajax({
+                            url: "{{ url('saveDataSolicitud') }}",
+                            type: 'GET',
+                            data: {libro_id,hora_recoleccion,fecha_recoleccion,fecha_entrega_usuario,contacto,gafete
+                            },
+                            beforeSend: function () {
+                            },
+                            success: function (response) {
+                                window.location.href = window.location.origin +'/director';
+                            }, error(error) {
+                            alert(error);
+                            }
+                        });
+
+
+
+
+
+
+                    } else {
+                        console.log('2');
+
+                    }
+                });
+    }
+
+
+    function cerrarMod1(){
+        $("#myModal").modal('close');
+        $( "#aviso" ).prop( "checked", true );
+    }
+
+    function cerrarMod2(){
+        $("#myModal2").modal('close');
+        $( "#terminos" ).prop( "checked", true );
+        let check1 = $("#aviso").val();
+        let check2 = $("#terminos").val();
+        if(check1 == 1 && check2 == 1){
+            document.getElementById("bot").style= "display: block";
+        }
+    }
+
+
     $(document).ready(function () {
         $('#fecha_recoleccion').datepicker({
             minDate  : new Date(),
@@ -158,7 +282,10 @@
                 weekdaysAbbrev: ["D","L", "M", "M", "J", "V", "S"]
             }
         });
+    });
 
+
+    $(document).ready(function () {
         $('#fecha_entrega_usuario').datepicker({
             minDate  : new Date(),
             format: "yyyy-mm-dd",
@@ -171,6 +298,48 @@
                 weekdaysAbbrev: ["D","L", "M", "M", "J", "V", "S"]
             }
         });
+    });
+
+    $(document).ready(function(){
+        $('#myModal').modal();
+        $('#myModal2').modal();
+    });
+
+    $(document).on('click', '#aviso', function(e) {
+        e.preventDefault();
+        $("#myModal").modal('open');
+    });
+
+    $(document).on('click', '#terminos', function(e) {
+        e.preventDefault();
+        $("#myModal2").modal('open');
+    });
+
+
+    $(document).on('change', '#hora_recoleccion', function(e) {
+        e.preventDefault();
+        let hora = $("#hora_recoleccion").val();
+        var cadena2 = hora.slice(0, 2);
+        if(cadena2 >= 09 && cadena2 <= 18){
+        }else{
+            swal({
+                    title: "ATENCIÓN",
+                    text: "Seleccione un horario válido de 9:00 am a 18:00 pm",
+                    icon: 'warning',
+                    dangerMode: true,
+                    buttons: {
+                        accept: 'ACEPTAR'
+                    }
+                }).then(function(willDelete) {
+                    if (willDelete) {
+                        $("#hora_recoleccion").val('');
+                        return false;
+
+                    } else {
+                        return false;
+                    }
+                });
+        }
     });
 </script>
 @endpush

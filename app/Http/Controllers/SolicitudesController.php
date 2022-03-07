@@ -42,14 +42,15 @@ class SolicitudesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+
+     public function saveDataSolicitud(Request $request){
         $Us = auth()->user()->servidorPublico;
         $registro = $request ->except('_token');
+        // dd($registro);
         //dd($registro);
         $libro = Libros::find($registro['libro_id']);
         $stock =$libro['stock'];
-       
+
         if ($stock >0){
             $stock = $stock -1;
             $lib['stock'] = $stock;
@@ -59,6 +60,7 @@ class SolicitudesController extends Controller
             $fecha_entrega_sistema = date("Y-m-d",strtotime($fecha_actual."+ 30 days"));
             $registro['solicitante'] = $Us->N_Usuario;
             $registro['fecha_entrega_sistema'] = $fecha_entrega_sistema;
+
             $data = Solicitud::create($registro);
         }
 
@@ -70,6 +72,39 @@ class SolicitudesController extends Controller
         $num = Solicitud::where('status',1)->where('libro_id',$data->libro_id)->get();
         $pdf = PDF::loadView('libros.pdfPrestamo', compact('data','dir','departamento','sp','depe','num'));
         return $pdf->stream('dependencia.pdf');
+     }
+
+
+
+    public function store(Request $request)
+    {
+        // $Us = auth()->user()->servidorPublico;
+        // $registro = $request ->except('_token');
+        // //dd($registro);
+        // $libro = Libros::find($registro['libro_id']);
+        // $stock =$libro['stock'];
+
+        // if ($stock >0){
+        //     $stock = $stock -1;
+        //     $lib['stock'] = $stock;
+        //     $libro->update($lib);
+
+        //     $fecha_actual = date("Y-m-d");
+        //     $fecha_entrega_sistema = date("Y-m-d",strtotime($fecha_actual."+ 30 days"));
+        //     $registro['solicitante'] = $Us->N_Usuario;
+        //     $registro['fecha_entrega_sistema'] = $fecha_entrega_sistema;
+
+        //     $data = Solicitud::create($registro);
+        // }
+
+
+        // $sp =  ServidoresPublicosCentralizada::where('Estado',1)->where('N_Usuario', $Us->N_Usuario)->get();
+        // $depe=  Dependencia::where('id_Dependencia',$sp[0]->id_Dependencia)->first();
+        // $dir =  Direccion::where('id_Direccion',$sp[0]->id_Direccion)->first();
+        // $departamento =  Departamento::where('id_Departamento', $sp[0]->id_Departamento)->first();
+        // $num = Solicitud::where('status',1)->where('libro_id',$data->libro_id)->get();
+        // $pdf = PDF::loadView('libros.pdfPrestamo', compact('data','dir','departamento','sp','depe','num'));
+        // return $pdf->stream('dependencia.pdf');
     }
 
     /**
