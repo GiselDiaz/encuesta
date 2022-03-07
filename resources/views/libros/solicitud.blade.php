@@ -208,6 +208,9 @@
         let fecha_entrega_usuario = $("#fecha_entrega_usuario").val();
         let contacto = $("#contacto").val();
         let gafete = $("#gafete").val();
+
+
+        
         swal({
                     title: "Atención, verifique que los datos proporcionados sean correctos: ",
                     text: 'Nombre del Libro: ' + libro + '\n' + '\n' +
@@ -224,29 +227,31 @@
                     }
                 }).then(function(willDelete) {
                     if (willDelete) {
-                        console.log('1');
-
                         $.ajax({
                             url: "{{ url('saveDataSolicitud') }}",
                             type: 'GET',
                             data: {libro_id,hora_recoleccion,fecha_recoleccion,fecha_entrega_usuario,contacto,gafete
                             },
+                            xhrFields: {
+                                responseType: 'blob'
+                            },
                             beforeSend: function () {
+
                             },
                             success: function (response) {
-                                window.location.href = window.location.origin +'/director';
+                                var blob = new Blob([response]);
+                                console.log(blob);
+                                var link = document.createElement('a');
+                                link.href = window.URL.createObjectURL(blob);
+                                link.download = "prestamo.pdf";
+                                link.click();
+                                window.location.href = window.location.origin +'/home';
                             }, error(error) {
-                            alert(error);
+
                             }
                         });
-
-
-
-
-
-
                     } else {
-                        console.log('2');
+
 
                     }
                 });
