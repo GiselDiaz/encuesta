@@ -194,9 +194,34 @@
 
 
 @push('scripts')
+<script src="http://momentjs.com/downloads/moment.min.js"></script>
 <script type="text/javascript">
 
+  $(document).on('change', '#fecha_entrega_usuario', function(e) {
+        e.preventDefault();
+        let fecha_recoleccion = moment($("#fecha_recoleccion").val());
+        let fecha_entrega_usuario = moment($("#fecha_entrega_usuario").val());
+        let dias = (fecha_entrega_usuario.diff(fecha_recoleccion, 'days'));
+        if(dias >=31){
+            swal({
+                    title: "ATENCIÓN ",
+                    text: 'LA FECHA DE ENTREGA NO DEBE SER MAYOR A 30 DÍAS',
+                    icon: 'warning',
+                    dangerMode: true,
+                    buttons: {
+                        accept: 'ACEPTAR'
+                    }
+                }).then(function(willDelete) {
+                    if (willDelete) {
+                        return false;
+                    } else {
+                        return false;
 
+                    }
+                });
+        }
+
+    });
 
 
 
@@ -208,10 +233,26 @@
         let fecha_entrega_usuario = $("#fecha_entrega_usuario").val();
         let contacto = $("#contacto").val();
         let gafete = $("#gafete").val();
+        if(hora_recoleccion == '' || fecha_recoleccion == '' || fecha_entrega_usuario == '' || contacto == '' || gafete == '' ){
+            swal({
+                    title: "ATENCIÓN ",
+                    text: 'DEBE LLENAR TODOS LOS DATOS',
+                    icon: 'warning',
+                    dangerMode: true,
+                    buttons: {
+                        // cancel: 'CANCELAR',
+                        accept: 'ACEPTAR'
+                    }
+                }).then(function(willDelete) {
+                    if (willDelete) {
+                        return false;
+                    } else {
+                        return false;
 
-
-        
-        swal({
+                    }
+                });
+        }
+                swal({
                     title: "Atención, verifique que los datos proporcionados sean correctos: ",
                     text: 'Nombre del Libro: ' + libro + '\n' + '\n' +
                     'Hora de recolección: ' + hora_recoleccion + '\n' + '\n' +
@@ -240,7 +281,6 @@
                             },
                             success: function (response) {
                                 var blob = new Blob([response]);
-                                console.log(blob);
                                 var link = document.createElement('a');
                                 link.href = window.URL.createObjectURL(blob);
                                 link.download = "prestamo.pdf";
@@ -251,8 +291,6 @@
                             }
                         });
                     } else {
-
-
                     }
                 });
     }
@@ -325,7 +363,8 @@
         e.preventDefault();
         let hora = $("#hora_recoleccion").val();
         var cadena2 = hora.slice(0, 2);
-        if(cadena2 >= 09 && cadena2 <= 18){
+
+        if(hora >= '09:00' && hora <= '18:00'){
         }else{
             swal({
                     title: "ATENCIÓN",
