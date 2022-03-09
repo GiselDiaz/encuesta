@@ -158,4 +158,24 @@ class SolicitudesController extends Controller
         $todayDate = Carbon::now()->format('Y-m-d');
         return view('libros.create', compact('servidorP','libro','todayDate'));
     }
+    public function control()
+    {
+        return view('libros.control');
+    }
+
+    public function getcontrol(Request $request )
+    {
+        $solicitud = $request->solicitud;
+        if($solicitud == 0){
+
+            $sol = Solicitud::where('status',0)->get();
+        }elseif($solicitud == 1){
+
+            $sol = Solicitud::where('status',1)->get();
+        }elseif($solicitud == 2 ){
+            $sol = Solicitud::where('status',2)->get();
+        }
+      
+        return view("libros.controlSolicitud", compact('sol'));
+    }
 }

@@ -32,7 +32,8 @@ Route::middleware(['auth'])->group(function () {
 
 
     Route::GET('saveDataSolicitud', 'App\Http\Controllers\SolicitudesController@saveDataSolicitud')->name('saveDataSolicitud');
-
+    Route::get('control', 'App\Http\Controllers\SolicitudesController@control')->name('control');
+    Route::get('getcontrol', 'App\Http\Controllers\SolicitudesController@getcontrol')->name('getcontrol');
     route::post("pdf/dependencia", [ReporteController::class, "pdfDependencia"])->name('pdf.dependencia');
     Route::GET('verReporte/{id}', 'App\Http\Controllers\ReporteController@verReporte')->name('verReporte');
     Route::get('imprimir/{id}', [ReporteController::class, 'generarExcel']);

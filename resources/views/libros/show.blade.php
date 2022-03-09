@@ -45,7 +45,17 @@
                         </div>
                     </div>
                 </div>
-
+                @if (auth()->user()->rfc =='DEGC941209' || auth()->user()->rfc =='DIRG940621' || auth()->user()->rfc =='MATD810802' || auth()->user()->rfc =='DOOJ900120')
+                <div class="row" >
+                    <div class="input-field col s2 right" >
+                        <div class="form-group" >
+                            <a href="{{route('control')}}" type="button" class="btn btn-rounded r text-white"
+                                style="background-color:rgb(150,0,72);">
+                                ESTATUS SOLICITUDES</a>
+                        </div>
+                    </div>
+                </div>
+                @endif
                     <!-- Modal Structure -->
                     <div id="modal1" class="modal">
                             <div class="modal-content">
