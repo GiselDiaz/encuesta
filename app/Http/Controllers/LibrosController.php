@@ -89,8 +89,13 @@ class LibrosController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         $solicitud = Solicitud::find($id);
-        if($solicitud->status == 0){
+
+        if($request->aprobacion == 2){
+            $sol['status'] = 2;
+            $sol['observaciones'] = $request->observaciones;
+        }elseif($solicitud->status == 0){
             $sol['status'] = 1;
             $sol['observaciones'] = $request->observaciones;
         }elseif($solicitud->status == 1){

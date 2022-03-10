@@ -39,6 +39,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('imprimir/{id}', [ReporteController::class, 'generarExcel']);
     Route::get('solicitar/{id}', 'App\Http\Controllers\SolicitudesController@solicitar')->name('solicitar');
     Route::get('solicitudes', 'App\Http\Controllers\LibrosController@solicitudes')->name('solicitudes');
+    Route::get('historico', 'App\Http\Controllers\SolicitudesController@historico')->name('historico');
     Route::get('aprobar/{id}', 'App\Http\Controllers\LibrosController@aprobar')->name('aprobar');
     Route::get('pdf/{id}', 'App\Http\Controllers\LibrosController@pdf')->name('pdf');
     Route::get('busquedaLibro/{id}', 'App\Http\Controllers\LibrosController@busquedaLibro')->name('busquedaLibro');

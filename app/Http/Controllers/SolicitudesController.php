@@ -166,8 +166,12 @@ class SolicitudesController extends Controller
     public function getcontrol(Request $request )
     {
         $solicitud = $request->solicitud;
-        if($solicitud == 0){
 
+
+
+        // $sol = Solicitud::select()->where('status',0)->get();
+        // dd($sol);
+        if($solicitud == 0){
             $sol = Solicitud::where('status',0)->get();
         }elseif($solicitud == 1){
 
@@ -175,7 +179,14 @@ class SolicitudesController extends Controller
         }elseif($solicitud == 2 ){
             $sol = Solicitud::where('status',2)->get();
         }
-      
+
         return view("libros.controlSolicitud", compact('sol'));
+    }
+
+    public function historico(Request $request)
+    {
+        $user = auth()->user()->rfc;
+        $hist = Solicitud::where('solicitante',$user)->get();
+        return view('libros.historico', compact('hist'));
     }
 }

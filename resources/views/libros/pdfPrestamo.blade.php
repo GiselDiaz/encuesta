@@ -212,7 +212,7 @@ padding-left: 20px;
         }
 
         h1 {
-            font-size: 12px;
+            font-size: 16px;
             font-weight: bold;
         }
 
@@ -264,16 +264,16 @@ padding-left: 20px;
     <br>
     <center>
         <div class="row">
-            <img src="{{ asset('genero/images/logo/genero_header.png') }}" alt=" avatar" style="width: 100%;" />
+            <img src="{{ asset('genero/images/logo/genero_header1.png') }}" alt=" avatar" style="width: 80%;" />
 
         </div>
 
     </center>
 </header>
 <body>
-
-        <h1 style="text-align: left;">
-            <br><b>Formato de préstamo de libro(s)</b>
+    <br>
+        <h1 style="text-align: center;">
+            <br><b>Formato electrónico de préstamo</b>
         </h1>
         <hr>
 

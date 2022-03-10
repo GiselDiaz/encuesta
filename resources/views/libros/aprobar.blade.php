@@ -101,7 +101,7 @@
                                 <div class="input-field col m12">
                                     <div class="form-group">
                                         <label class="control-label"><strong>Observaciones: </strong></label>
-                                        {!! Form::text('libro[observaciones]', null, ['class' => 'form-control text-uppercase','id' => 'observaciones', 'name' => 'observaciones', 'placeholder'=>'P. Ej. La entrega del libro será en la oficina de la unidad de genero']) !!}
+                                        {!! Form::text('libro[observaciones]', null, ['class' => 'form-control text-uppercase','id' => 'observaciones', 'name' => 'observaciones', 'placeholder'=>'P. Ej. La entrega del libro será en la oficina de la unidad de genero','required']) !!}
                                     </div>
                                 </div>
                             @endif
