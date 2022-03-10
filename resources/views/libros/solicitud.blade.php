@@ -301,7 +301,7 @@
                                 link.href = window.URL.createObjectURL(blob);
                                 link.download = "prestamo.pdf";
                                 link.click();
-                                window.location.href = window.location.origin +'/home';
+                                window.location.href = window.location.origin +'espaciogenero/home';
                             }, error(error) {
 
                             }
