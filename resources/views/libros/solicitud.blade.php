@@ -277,6 +277,22 @@
                                 responseType: 'blob'
                             },
                             beforeSend: function () {
+                                swal({
+                                title: "ATENCIÓN ",
+                                text: 'Espere un momento, se esta descargando su formato electrónico de préstamo...',
+                                icon: 'success',
+                                dangerMode: true,
+                                // buttons: {
+                                // accept: 'ACEPTAR'
+                                // }
+                                }).then(function(willDelete) {
+                                if (willDelete) {
+                                return false;
+                                } else {
+                                return false;
+
+                                }
+                                });
 
                             },
                             success: function (response) {
