@@ -275,7 +275,7 @@ padding-left: 20px;
         <h1 style="text-align: center;">
             <br><b>Formato electrónico de préstamo</b>
         </h1>
-        <hr>
+
 
         <h2 style="text-align: left; color:rgb(150,0,72);">
             <br><b>1.- Persona servidora pública solicitante </b>
@@ -337,7 +337,7 @@ padding-left: 20px;
         <li style="text-align: justify;">Informar a la Unidad de Igualdad de G&eacute;nero y Erradicaci&oacute;n de la Violencia, cualquier desperfecto o incidente con el libro.</li>
         <li style="text-align: justify;">No maltratar, doblar, subrayar, manchar, arrancar hojas o im&aacute;genes del libro.</li>
         <li style="text-align: justify;">Contemplar que el per&iacute;odo de pr&eacute;stamo es por 30 d&iacute;as, en su caso, podr&aacute; realizar la renovaci&oacute;n del per&iacute;odo en caso de disponibilidad.</li>
-        <li style="text-align: justify;">Revise que los datos capturados sean correctos haga clic en Guardar.</li>
+        {{-- <li style="text-align: justify;">Revise que los datos capturados sean correctos haga clic en Guardar.</li> --}}
         <li style="text-align: justify;">Descargue, imprima y firme el formato.</li>
         <li style="text-align: justify;">Debe dirigirse al icono ubicado en el margen superior y haga clic para cerrar sesión.</li>
         <li style="text-align: justify;">Presentar el formato firmado en la Unidad de Igualdad de Género  y Erradicación de la Violencia paa concluir el trámite de préstamo.</li>

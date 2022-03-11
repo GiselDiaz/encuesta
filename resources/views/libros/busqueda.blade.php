@@ -68,6 +68,10 @@
 
 
 @push('scripts')
+
+
+
+
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.materialboxed');

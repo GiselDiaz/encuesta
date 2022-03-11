@@ -89,20 +89,45 @@ class LibrosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-        $solicitud = Solicitud::find($id);
 
+        $solicitud = Solicitud::find($id);
+        // dd($solicitud);
         if($request->aprobacion == 2){
             $sol['status'] = 2;
             $sol['observaciones'] = $request->observaciones;
-        }elseif($solicitud->status == 0){
-            $sol['status'] = 1;
+
+            $libro = Libros::find($solicitud->libro_id);
+            $stock =$libro['stock'];
+            $stock = $stock + 1;
+            $lib['stock'] = $stock;
+            $libro->update($lib);
+
+
+        }elseif($request->aprobacion == 1){
+            $sol['status'] = 2;
             $sol['observaciones'] = $request->observaciones;
-        }elseif($solicitud->status == 1){
-            if ($request->entregado == 1){
-                $sol['status'] =2;
-            }
+        }elseif($request->entregado == 1){
+            $sol['status'] = 2;
+             $sol['observaciones'] = 'ENTREGADO';
+
+             $libro = Libros::find($solicitud->libro_id);
+             $stock =$libro['stock'];
+             $stock = $stock + 1;
+             $lib['stock'] = $stock;
+             $libro->update($lib);
+        }elseif($request->entregado == 2){
+            $sol['status'] = 1;
+             $sol['observaciones'] = 'NO ENTREGADO';
         }
+
+        // elseif($solicitud->status == 0){
+        //     $sol['status'] = 1;
+        //     $sol['observaciones'] = $request->observaciones;
+        // }elseif($solicitud->status == 1){
+        //     if ($request->entregado == 1){
+        //         $sol['status'] =2;
+        //     }
+        // }
         $solicitud->update($sol);
         return redirect('solicitudes');
     }

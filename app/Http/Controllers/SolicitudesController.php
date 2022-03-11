@@ -62,16 +62,21 @@ class SolicitudesController extends Controller
             $registro['fecha_entrega_sistema'] = $fecha_entrega_sistema;
 
             $data = Solicitud::create($registro);
+
+            $sp =  ServidoresPublicosCentralizada::where('Estado',1)->where('N_Usuario', $Us->N_Usuario)->get();
+            $depe=  Dependencia::where('id_Dependencia',$sp[0]->id_Dependencia)->first();
+            $dir =  Direccion::where('id_Direccion',$sp[0]->id_Direccion)->first();
+            $departamento =  Departamento::where('id_Departamento', $sp[0]->id_Departamento)->first();
+            $num = Solicitud::where('status',1)->where('libro_id',$data->libro_id)->get();
+            $pdf = PDF::loadView('libros.pdfPrestamo', compact('data','dir','departamento','sp','depe','num'));
+            return $pdf->stream('dependencia.pdf');
+        }else{
+            $response[] = array(
+                "existe"=>'no'
+            );
+            return json_encode($response);
         }
 
-
-        $sp =  ServidoresPublicosCentralizada::where('Estado',1)->where('N_Usuario', $Us->N_Usuario)->get();
-        $depe=  Dependencia::where('id_Dependencia',$sp[0]->id_Dependencia)->first();
-        $dir =  Direccion::where('id_Direccion',$sp[0]->id_Direccion)->first();
-        $departamento =  Departamento::where('id_Departamento', $sp[0]->id_Departamento)->first();
-        $num = Solicitud::where('status',1)->where('libro_id',$data->libro_id)->get();
-        $pdf = PDF::loadView('libros.pdfPrestamo', compact('data','dir','departamento','sp','depe','num'));
-        return $pdf->stream('dependencia.pdf');
      }
 
 

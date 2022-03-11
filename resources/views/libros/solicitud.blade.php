@@ -233,6 +233,7 @@
         let fecha_entrega_usuario = $("#fecha_entrega_usuario").val();
         let contacto = $("#contacto").val();
         let gafete = $("#gafete").val();
+
         if(hora_recoleccion == '' || fecha_recoleccion == '' || fecha_entrega_usuario == '' || contacto == '' || gafete == '' ){
             swal({
                     title: "ATENCIÓN ",
@@ -251,14 +252,18 @@
 
                     }
                 });
-        }
-                swal({
+        }else{
+console.log('todo lleno');
+
+
+
+            swal({
                     title: "Atención, verifique que los datos proporcionados sean correctos: ",
-                    text: 'Nombre del Libro: ' + libro + '\n' + '\n' +
-                    'Hora de recolección: ' + hora_recoleccion + '\n' + '\n' +
-                    'Fecha de recolección: ' + fecha_recoleccion + '\n' + '\n' +
-                    'Fecha de entrega: ' + fecha_entrega_usuario + '\n' + '\n' +
-                    'Número de contato: ' + contacto + '\n' + '\n' +
+                text: 'Nombre del Libro: ' + libro + '\n' +
+                    'Hora de recolección: ' + hora_recoleccion + '\n' +
+                    'Fecha de recolección: ' + fecha_recoleccion + '\n' +
+                    'Fecha de entrega: ' + fecha_entrega_usuario + '\n' +
+                    'Número de contato: ' + contacto + '\n' +
                     'Folio de gafete oficial: ' + gafete + '\n' ,
                     icon: 'warning',
                     dangerMode: true,
@@ -285,23 +290,40 @@
                                 // buttons: {
                                 // accept: 'ACEPTAR'
                                 // }
-                                }).then(function(willDelete) {
-                                if (willDelete) {
-                                return false;
-                                } else {
-                                return false;
-
-                                }
-                                });
+                                })
 
                             },
                             success: function (response) {
-                                var blob = new Blob([response]);
-                                var link = document.createElement('a');
-                                link.href = window.URL.createObjectURL(blob);
-                                link.download = "prestamo.pdf";
-                                link.click();
-                                window.location.href = window.location.origin +'/espaciogenero/home';
+
+                                if(response.type != 'application/pdf'){
+                                    swal({
+                                        title: "ATENCIÓN",
+                                        text: "ESTE LIBRO YA NO DISPONIBLE",
+                                        icon: 'warning',
+                                        dangerMode: true,
+                                        buttons: {
+                                            // cancel: 'CANCELAR',
+                                            accept: 'ACEPTAR'
+                                        }
+                                    }).then(function(willDelete) {
+                                        if (willDelete) {
+                                            window.location.href = window.location.origin +'/espaciogenero/home';
+                                            // location.reload();
+                                        } else {
+                                            window.location.href = window.location.origin +'/espaciogenero/home';
+                                            // location.reload();
+                                        }
+                                    });
+                                }else{
+                                    var blob = new Blob([response]);
+                                    var link = document.createElement('a');
+                                    link.href = window.URL.createObjectURL(blob);
+                                    link.download = "prestamo.pdf";
+                                    link.click();
+                                    window.location.href = window.location.origin +'/espaciogenero/home';
+                                }
+
+
                             }, error(error) {
 
                             }
@@ -309,6 +331,10 @@
                     } else {
                     }
                 });
+
+
+        }
+
     }
 
 
