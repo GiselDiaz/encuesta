@@ -258,7 +258,7 @@ console.log('todo lleno');
 
 
             swal({
-                    title: "Atención, verifique que los datos proporcionados sean correctos: ",
+                    title: "Verifique que los datos proporcionados sean correctos: ",
                 text: 'Nombre del Libro: ' + libro + '\n' +
                     'Hora de recolección: ' + hora_recoleccion + '\n' +
                     'Fecha de recolección: ' + fecha_recoleccion + '\n' +
