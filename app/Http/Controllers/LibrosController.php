@@ -129,7 +129,7 @@ class LibrosController extends Controller
         //     }
         // }
         $solicitud->update($sol);
-        return redirect('solicitudes');
+        return redirect('control');
     }
 
     /**

@@ -79,13 +79,13 @@
 
                                                 if($s->status == '0'){
                                                     echo '<i class="material-icons" style="color:gray; font-size: 40px">fiber_manual_record</i>';
-                                                }elseif($hoy >= $f2){
+                                                }elseif($hoy >= $f2 || $s->status == '2'){
                                                     echo '<i class="material-icons" style="color:red; font-size: 40px">fiber_manual_record</i>';
                                                 }else{
                                                     echo '<i class="material-icons" style="color:green; font-size: 40px">fiber_manual_record</i>';
                                                 }
                                             ?>
-                                            @if($s->status == '0')
+                                            @if($s->status == '0' || $s->status == '1' )
                                                 <a title="ver" class="tooltipped" data-position="bottom" data-tooltip="ver"
                                                 href="{{ route('aprobar', [$s->id])}}">
                                                 <i class="material-icons iconlegislatura">visibility</i>
