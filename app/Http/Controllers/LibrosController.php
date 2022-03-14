@@ -104,11 +104,11 @@ class LibrosController extends Controller
             $sol['status'] = 1;
             $sol['observaciones'] = $request->observaciones;
 
-            $libro = Libros::find($solicitud->libro_id);
-            $stock =$libro['stock'];
-            $stock = $stock - 1;
-            $lib['stock'] = $stock;
-            $libro->update($lib);
+            // $libro = Libros::find($solicitud->libro_id);
+            // $stock =$libro['stock'];
+            // $stock = $stock - 1;
+            // $lib['stock'] = $stock;
+            // $libro->update($lib);
         }elseif($request->entregado == 1){
             $sol['status'] = 2;
              $sol['observaciones'] = 'ENTREGADO';

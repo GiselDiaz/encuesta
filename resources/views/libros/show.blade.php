@@ -90,7 +90,7 @@
                                                          title="Titulo: {{ $libros[$libro]->nombre }} / Autor: {{ $libros[$libro]->autor }}">
                                                     <a disabled class="waves-effect waves-light btn"
                                                        href="{{ route('solicitar', [$libros[$libro]->id]) }}"><i
-                                                            class="material-icons left">help</i>Disponible
+                                                            class="material-icons left">help</i>Disponible2
                                                         el {{ $libros[$libro]->disponible }}</a>
                                                     <br>
                                                     <br>
@@ -104,7 +104,7 @@
 
                                                     <a class="waves-effect waves-light btn"
                                                        href="{{ route('solicitar', [$libros[$libro]->id]) }}"><i
-                                                            class="material-icons left">cloud</i>Disponible</a>
+                                                            class="material-icons left">cloud</i>Disponible1</a>
                                                     <br>
                                                     <br>
                                                 @endif
