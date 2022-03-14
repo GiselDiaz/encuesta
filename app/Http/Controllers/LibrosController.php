@@ -91,7 +91,7 @@ class LibrosController extends Controller
     {
 
         $solicitud = Solicitud::find($id);
-         dd($request->aprobacion);
+        //  dd($request->aprobacion);
         if($request->aprobacion == 2){
             $sol['status'] = 2;
             $sol['observaciones'] = $request->observaciones;
