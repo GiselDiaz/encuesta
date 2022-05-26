@@ -22,8 +22,8 @@
                         <div class="col s12">
                             <div class="card-content">
                                 <center>
-                                <img style="width: 90%;"
-                                     src="{{ asset('genero/images/logo/banner_logos.png' ) }}">
+                                <img style="width: 100%;"
+                                     src="{{ asset('genero/images/logo/placa_genero.png' ) }}">
                                     </center>
                             </div>
                         </div>
