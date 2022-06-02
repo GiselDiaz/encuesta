@@ -62,7 +62,6 @@ class SolicitudesController extends Controller
             $registro['fecha_entrega_sistema'] = $fecha_entrega_sistema;
 
             $data = Solicitud::create($registro);
-
             $sp =  ServidoresPublicosCentralizada::where('Estado',1)->where('N_Usuario', $Us->N_Usuario)->get();
             $depe=  Dependencia::where('id_Dependencia',$sp[0]->id_Dependencia)->first();
             $dir =  Direccion::where('id_Direccion',$sp[0]->id_Direccion)->first();

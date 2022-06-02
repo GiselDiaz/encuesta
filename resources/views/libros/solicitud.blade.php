@@ -14,15 +14,20 @@
             </div>
         </div>
 
-
-
         <div class="card">
             <div class="card-content">
                 <div class="row">
                     <div class="input-field col m4">
-                        <br>
-                        <br>
-                        <br>
+                    </div>
+                    <div class="input-field col m8">
+                        <div class="form-group">
+                            <label>Llene el formato electrónico de préstamo, consulte el aviso de privacidad <a href="https://legislativoedomex.gob.mx/documentos/avisosprivacidad/unidad-de-igualdad-de-genero-y-erradicacion-de-la-violencia.pdf" target="_blank" > aquí </a> y revise las considiciones de préstamo. </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col m4">
                         <img class="materialboxed"
                              src="{{ asset('genero/images/libros/' . $libro->id . '.png') }}"
                              style="width: 100%; " alt="name" class="circle"
@@ -31,7 +36,6 @@
                     </div>
 
                     <div class="input-field col m8">
-
                         <div class="row">
 {{--                            <h1>Formato de préstamo de libro(s)</h1>--}}
 
@@ -63,7 +67,6 @@
                             </div>
                             <div class="input-field col m6">
                                 <div class="form-group">
-
                                     <label class="control-label"><strong>Hora de recolección: </strong></label>
                                     {!! Form::time('libro[hora_recoleccion]',null, ['class' => 'form-control timepicker','id' => 'hora_recoleccion', 'name' => 'hora_recoleccion', 'required' =>true]) !!}
 
@@ -78,10 +81,17 @@
 
                                 </div>
                             </div>
-                            <div class="input-field col m6">
+                            <div class="input-field col m3">
                                 <div class="form-group">
                                     <label class="control-label"><strong>Fecha de entrega: </strong></label>
                                     {!! Form::text('libro[fecha_entrega_usuario]', null, ['class' => 'form-control text-uppercase','id' => 'fecha_entrega_usuario', 'name' => 'fecha_entrega_usuario', 'min' => $todayDate, 'required' =>true]) !!}
+                                </div>
+                            </div>
+                            <div class="input-field col m3">
+                                <div class="form-group">
+                                    <label class="control-label"><strong>Hora de entrega: </strong></label>
+                                    {!! Form::time('libro[hora_entrega_usuario]',null, ['class' => 'form-control timepicker','id' => 'hora_entrega_usuario', 'name' => 'hora_entrega_usuario', 'required' =>true]) !!}
+
                                 </div>
                             </div>
                         </div>
@@ -101,9 +111,12 @@
                         </div>
 
                         <div class="row">
-                            <div class="input-field col m10">
+                            <div class="input-field col m6">
                                 <div class="form-group">
-                                    <label>Llene el formato electrónico de préstamo, consulte el aviso de privacidad <a href="https://legislativoedomex.gob.mx/documentos/avisosprivacidad/unidad-de-igualdad-de-genero-y-erradicacion-de-la-violencia.pdf" target="_blank" > aquí </a> y revise las considiciones de préstamo. </label>
+                                    <label class="validate">
+                                        <input class="with-gap1" name="terminos" id="terminos" type="checkbox" value="1" required/> <span></span>
+                                        <strong>Acepto condiciones de prestamo.</strong>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -113,21 +126,12 @@
                                 <div class="form-group">
                                     <label class="validate">
                                     <input class="with-gap" name="aviso" id="aviso" type="checkbox" value="1" required/> <span></span>
-                                        <strong>He leído el aviso de privacidad </strong>
+                                        <strong>He leído el aviso de privacidad.</strong>
                                     </label>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="input-field col m6">
-                                <div class="form-group">
-                                    <label class="validate">
-                                    <input class="with-gap1" name="terminos" id="terminos" type="checkbox" value="1" required/> <span></span>
-                                        <strong>Acepto el uso y termino de condiciones  </strong>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+
                         <div class="row" id="bot" style="display: none;">
                             <div class="input-field col m12">
                                 <center>
@@ -160,23 +164,23 @@
                     <div id="myModal2" class="modal modal-fixed-footer">
                         <div class="modal-content">
                             <h2>Condiciones de Préstamo</h2>
-                            <p><strong style=" font-size: 20px; color: #96124B;">Me comprometo a:</strong></p>
+                            <p><strong style=" font-size: 14px; color: #96124B;">Me comprometo a:</strong></p>
                             <br>
 
-                            <p><strong style=" font-size: 20px; color: #000; text-align: justify;">1. No maltratar, doblar, subrayar, manchar, arrancar hojas o
+                            <p><strong style=" font-size: 12px; color: #000; text-align: justify;">1. No maltratar, doblar, subrayar, manchar, arrancar hojas o
                             imágenes del libro.</strong></p>
                             <br>
-                            <p><strong style=" font-size: 20px; color: #000; text-align: justify;">2. Contemplar que el período de préstamo es por 30 días, en su caso,
+                            <p><strong style=" font-size: 12px; color: #000; text-align: justify;">2. Contemplar que el período de préstamo es por 30 días, en su caso,
                             podrá realizar la renovación del período en caso de disponibilidad.</strong></p>
 
                             <br>
-                            <p><strong style=" font-size: 20px; color: #000; text-align: justify;">3. Informar a la Unidad de Igualdad de Género y Erradicación de la
+                            <p><strong style=" font-size: 12px; color: #000; text-align: justify;">3. Informar a la Unidad de Igualdad de Género y Erradicación de la
                             Violencia, cualquier desperfecto o incidente con el libro.</strong></p>
                             <br>
-                            <p><strong style=" font-size: 20px; color: #000; text-align: justify;">4. Devolver el ejemplar en la fecha señalada.</strong></p>
+                            <p><strong style=" font-size: 12px; color: #000; text-align: justify;">4. Devolver el ejemplar en la fecha señalada.</strong></p>
 
                             <br>
-                            <p><strong style=" font-size: 20px; color: #000; text-align: justify;">5. Respetar las condiciones de préstamo.</strong></p>
+                            <p><strong style=" font-size: 12px; color: #000; text-align: justify;">5. Respetar las condiciones de préstamo.</strong></p>
 
                         </div>
                         <div class="modal-footer">
@@ -223,14 +227,59 @@
 
     });
 
+  $(document).on('change', '#fecha_recoleccion', function(e) {
+      e.preventDefault();
+      let fecha_recoleccion = $("#fecha_recoleccion").val();
+      let hora_recoleccion = $("#hora_recoleccion").val();
 
 
-    function enviarData(){
+      var fecha = new Date(); //Fecha actual
+      var mes = fecha.getMonth()+1; //obteniendo mes
+      var dia = fecha.getDate(); //obteniendo dia
+      var ano = fecha.getFullYear(); //obteniendo año
+      if(dia<10){
+          dia='0'+dia; //agrega cero si el menor de 10
+      }
+      if(mes<10){
+          mes='0'+mes //agrega cero si el menor de 10
+      }
+      var hoy = ano+'-'+mes+'-'+dia;
+      if (fecha_recoleccion == hoy){
+          let  hours = fecha.getHours();
+          let  minutos = fecha.getMinutes();
+          hours = hours+1+':'+minutos;
+          if (hora_recoleccion <= hours){
+              swal({
+                  title: "ATENCIÓN ",
+                  text: 'LA HORA DE RECOLECCIÓN DEBÉ SER MINIMO UNA HORA DESPUES DE SU SOLICITUD',
+                  icon: 'warning',
+                  dangerMode: true,
+                  buttons: {
+                      accept: 'ACEPTAR'
+                  }
+              }).then(function(willDelete) {
+                  if (willDelete) {
+                      let hora_recoleccion = $("#hora_recoleccion").val('');
+                      return false;
+                  } else {
+                      let hora_recoleccion = $("#hora_recoleccion").val('');
+                      return false;
+
+                  }
+              });
+          }
+      }
+  });
+
+
+
+  function enviarData(){
         let libro_id = $("#libro_id").val();
         let libro = $("#libro").val();
         let hora_recoleccion = $("#hora_recoleccion").val();
         let fecha_recoleccion = $("#fecha_recoleccion").val();
         let fecha_entrega_usuario = $("#fecha_entrega_usuario").val();
+        let hora_entrega_usuario = $("#hora_entrega_usuario").val();
         let contacto = $("#contacto").val();
         let gafete = $("#gafete").val();
 
@@ -253,17 +302,14 @@
                     }
                 });
         }else{
-console.log('todo lleno');
-
-
-
             swal({
                     title: "Verifique que los datos proporcionados sean correctos: ",
                 text: 'Nombre del Libro: ' + libro + '\n' +
                     'Hora de recolección: ' + hora_recoleccion + '\n' +
                     'Fecha de recolección: ' + fecha_recoleccion + '\n' +
                     'Fecha de entrega: ' + fecha_entrega_usuario + '\n' +
-                    'Número de contato: ' + contacto + '\n' +
+                    'Hora de entrega: ' + hora_entrega_usuario + '\n' +
+                    'Número de contacto: ' + contacto + '\n' +
                     'Folio de gafete oficial: ' + gafete + '\n' ,
                     icon: 'warning',
                     dangerMode: true,
@@ -276,7 +322,7 @@ console.log('todo lleno');
                         $.ajax({
                             url: "{{ url('saveDataSolicitud') }}",
                             type: 'GET',
-                            data: {libro_id,hora_recoleccion,fecha_recoleccion,fecha_entrega_usuario,contacto,gafete
+                            data: {libro_id,hora_recoleccion,fecha_recoleccion,fecha_entrega_usuario,contacto,gafete, hora_entrega_usuario
                             },
                             xhrFields: {
                                 responseType: 'blob'
