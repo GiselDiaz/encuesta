@@ -68,6 +68,8 @@
                                             <br>
                                             <strong>Fecha entrega: </strong>
                                             {{$s->fecha_entrega_usuario}}
+                                            <strong>Hora entrega: </strong>
+                                            {{$s->hora_entrega_usuario}}
                                         </td>
 
                                         <td class="text-center">
@@ -86,10 +88,10 @@
                                                 }
                                             ?>
                                             @if($s->status == '0' || $s->status == '1' )
-                                                <a title="ver" class="tooltipped" data-position="bottom" data-tooltip="ver"
-                                                href="{{ route('aprobar', [$s->id])}}">
-                                                <i class="material-icons iconlegislatura">visibility</i>
-                                                </a>
+{{--                                                <a title="ver" class="tooltipped" data-position="bottom" data-tooltip="ver"--}}
+{{--                                                href="{{ route('aprobar', [$s->id])}}">--}}
+{{--                                                <i class="material-icons iconlegislatura">visibility</i>--}}
+{{--                                                </a>--}}
                                             @endif
 
                                         </td>
