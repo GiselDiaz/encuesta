@@ -14,9 +14,9 @@
     @endif
     <li><a href="{{route('historico')}}"><i class="material-icons ">assignment_ind</i><span data-i18n="Modern Menu">Mis libros</span></a></li>
     <li>
-        <object data="https://legislativoedomex.gob.mx/documentos/avisosprivacidad/unidad-de-igualdad-de-genero-y-erradicacion-de-la-violencia.pdf" type="application/pdf" width="100%" height="800px">
+        <a href="https://administracionyfinanzasplem.gob.mx/espaciogenero/avisosprivacidad/genero/pdf/manual_genero.pdf" target="_self">
         <i class="material-icons ">assignment_ind</i><span data-i18n="Modern Menu">Manual</span>
-        </object>
+        </a>
     </li>
 </ul>
 
