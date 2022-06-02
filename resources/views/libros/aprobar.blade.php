@@ -79,8 +79,14 @@
                                     {!! Form::text('libro[libro]', $solicitud->fecha_entrega_sistema, ['class' => 'form-control text-uppercase','id' => 'libro', 'name' => 'libro', 'readonly'=>true]) !!}
                                 </div>
                             </div>
+                            <div class="input-field col m4">
+                                <div class="form-group">
+                                    <label class="control-label"><strong>Hora de entrega seleccionada por el solicitante: </strong></label>
+                                    {!! Form::text('libro[libro]', $solicitud->hora_entrega_usuario, ['class' => 'form-control text-uppercase','id' => 'libro', 'name' => 'libro', 'readonly'=>true]) !!}
+                                </div>
+                            </div>
                             @if($solicitud->status == 0)
-                                <div class="input-field col m8">
+                                <div class="input-field col m4">
                                     <div class="form-group">
                                         <label class="control-label"><strong>Aprobar: </strong></label>
                                         {!! Form::select('libro[aprobacion]', $validacion, [], ['class' => 'form-control text-uppercase','id' => 'aprobacion', 'name' => 'aprobacion', 'placeholder'=>'Selecciona una opción']) !!}

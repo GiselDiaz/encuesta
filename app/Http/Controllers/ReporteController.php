@@ -22,6 +22,7 @@ use Jenssegers\Date\Date;
 class ReporteController extends Controller
 {
     /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
