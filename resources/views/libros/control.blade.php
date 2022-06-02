@@ -44,13 +44,14 @@
                 $.ajax({
                     url: "{{ url('getcontrol') }}",
                     type: 'GET',
-                    data: {solicitud
+                    data: {
+                      solicitud,
                     },
                     beforeSend: function () {
-                        $("#detalles").html('Buscando Resultados...');
+                        console.log(solicitud);
+                         $("#detalles").html('Buscando Resultados...');
                     },
                     success: function (response) {
-                        console.log('ci');
                         $("#detalles").show();
                         $("#detalles").html(response);
                         $('#page-length-option').DataTable().clear().draw();
@@ -59,7 +60,7 @@
                         $('#page-length-option').DataTable().draw();
                         $("#detalles").show();
                     }, error(error) {
-                        alert('Falló con exito');
+                        alert('Falló');
                     }
                 });
 

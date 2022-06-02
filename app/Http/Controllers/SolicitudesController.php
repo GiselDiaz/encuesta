@@ -169,16 +169,11 @@ class SolicitudesController extends Controller
 
     public function getcontrol(Request $request )
     {
+//        dd($request->solicitud);
         $solicitud = $request->solicitud;
-
-
-
-        // $sol = Solicitud::select()->where('status',0)->get();
-        // dd($sol);
         if($solicitud == 0){
             $sol = Solicitud::where('status',0)->get();
         }elseif($solicitud == 1){
-
             $sol = Solicitud::where('status',1)->get();
         }elseif($solicitud == 2 ){
             $sol = Solicitud::where('status',2)->get();
