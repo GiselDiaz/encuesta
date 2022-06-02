@@ -66,15 +66,18 @@
                             <div class="input-field col s12">
                                 <button type="submit" class="btn waves-effect waves-light border-round  col s12 bg-primary">Ingresar</button>
                             </div>
-
                         </div>
                     </form>
+                    <div class="row">
+                        <center><a href="https://administracionyfinanzasplem.gob.mx/espaciogenero/genero/pdf/manual_genero.pdf" target="_blank">Consultar aquí la guia de usuario.</a></center>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="content-overlay"></div>
     </div>
 </div>
+
 
 <!-- BEGIN VENDOR JS-->
 <script src="{{ asset('genero/js/vendors.min.js') }}"></script>

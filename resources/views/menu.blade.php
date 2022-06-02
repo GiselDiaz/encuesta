@@ -14,7 +14,7 @@
     @endif
     <li><a href="{{route('historico')}}"><i class="material-icons ">assignment_ind</i><span data-i18n="Modern Menu">Mis libros</span></a></li>
     <li>
-        <a href="https://administracionyfinanzasplem.gob.mx/espaciogenero/avisosprivacidad/genero/pdf/manual_genero.pdf" target="_self">
+        <a href="https://administracionyfinanzasplem.gob.mx/espaciogenero/genero/pdf/manual_genero.pdf" target="_blank">
         <i class="material-icons ">assignment_ind</i><span data-i18n="Modern Menu">Manual</span>
         </a>
     </li>
