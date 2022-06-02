@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\registroMailable;
+use App\Mail\SalidaMailable;
 use App\Models\Departamento;
 use App\Models\Dependencia;
 use App\Models\Direccion;
@@ -13,6 +15,7 @@ use Carbon\Carbon;
 use Facade\Ignition\SolutionProviders\DefaultDbNameSolutionProvider;
 use http\Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class SolicitudesController extends Controller
 {
@@ -67,6 +70,17 @@ class SolicitudesController extends Controller
             $dir =  Direccion::where('id_Direccion',$sp[0]->id_Direccion)->first();
             $departamento =  Departamento::where('id_Departamento', $sp[0]->id_Departamento)->first();
             $num = Solicitud::where('status',1)->where('libro_id',$data->libro_id)->get();
+
+            $unidad = ServidoresPublicosCentralizada::where('N_Usuario', 'MATD810802')->first();
+            $solicitante =$sp[0]->Nombre;
+            if (!empty($unidad)){
+                if ($unidad->C_Electronico != ''){
+                    $nombreJ = $unidad->Nombre;
+                 //   dd($unidad);
+                    Mail::to($unidad->C_Electronico)->send(new registroMailable($nombreJ, $solicitante));
+                }
+            }
+
             $pdf = PDF::loadView('libros.pdfPrestamo', compact('data','dir','departamento','sp','depe','num'));
             return $pdf->stream('dependencia.pdf');
         }else{

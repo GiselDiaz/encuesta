@@ -12,6 +12,7 @@
         <li><a href="{{route('control')}}"><i class="material-icons ">insert_chart</i><span data-i18n="Modern Menu">Estatus</span></a></li>
 {{--        <li><a href="{{route('libros.index')}}"><i class="material-icons ">book</i><span data-i18n="Modern Menu">Prestamo de Libros</span></a></li>--}}
     @endif
+    <li><a href="{{route('historico')}}"><i class="material-icons ">assignment_ind</i><span data-i18n="Modern Menu">Manual</span></a></li>
     <li><a href="{{route('historico')}}"><i class="material-icons ">assignment_ind</i><span data-i18n="Modern Menu">Mis libros</span></a></li>
 </ul>
 
