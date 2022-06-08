@@ -21,7 +21,7 @@
                     </div>
                     <div class="input-field col m8">
                         <div class="form-group">
-                            <label>Llene el formato electrónico de préstamo, consulte el aviso de privacidad <a href="https://legislativoedomex.gob.mx/documentos/avisosprivacidad/unidad-de-igualdad-de-genero-y-erradicacion-de-la-violencia.pdf" target="_blank" > aquí </a> y revise las considiciones de préstamo. </label>
+                            <label>Llene el formato electrónico de préstamo, consulte el aviso de privacidad <a href="https://legislativoedomex.gob.mx/documentos/avisosprivacidad/unidad-de-igualdad-de-genero-y-erradicacion-de-la-violencia.pdf" target="_blank" > aquí </a> y revise las condiciones de préstamo.  <a id="terminos1" name="terminos1"> aquí </a></label>
                         </div>
                     </div>
                 </div>
@@ -446,6 +446,11 @@
         $("#myModal2").modal('open');
     });
 
+    $(document).on('click', '#terminos1', function(e) {
+        e.preventDefault();
+        $("#myModal2").modal('open');
+    });
+
 
     $(document).on('change', '#hora_recoleccion', function(e) {
         e.preventDefault();
@@ -456,7 +461,7 @@
         }else{
             swal({
                     title: "ATENCIÓN",
-                    text: "Seleccione un horario válido de 9:00 am a 18:00 pm",
+                    text: "Seleccione un horario válido de 9:00 a 18:00",
                     icon: 'warning',
                     dangerMode: true,
                     buttons: {
@@ -473,6 +478,33 @@
                 });
         }
     });
+
+  $(document).on('change', '#hora_entrega_usuario', function(e) {
+      e.preventDefault();
+      let hora = $("#hora_entrega_usuario").val();
+      var cadena2 = hora.slice(0, 2);
+
+      if(hora >= '09:00' && hora <= '18:00'){
+      }else{
+          swal({
+              title: "ATENCIÓN",
+              text: "Seleccione un horario válido de 9:00 a 18:00",
+              icon: 'warning',
+              dangerMode: true,
+              buttons: {
+                  accept: 'ACEPTAR'
+              }
+          }).then(function(willDelete) {
+              if (willDelete) {
+                  $("#hora_recoleccion").val('');
+                  return false;
+
+              } else {
+                  return false;
+              }
+          });
+      }
+  });
 </script>
 @endpush
 
