@@ -125,7 +125,7 @@
                             <div class="input-field col m6">
                                 <div class="form-group">
                                     <label class="validate">
-                                    <input class="with-gap" name="aviso" id="aviso" type="checkbox" value="1" required/> <span></span>
+                                    <input class="with-gap" name="aviso" id="aviso" type="checkbox" required/> <span></span>
                                         <strong>He leído el aviso de privacidad.</strong>
                                     </label>
                                 </div>
@@ -383,22 +383,29 @@
 
     }
 
+  $(document).on('click', '#aviso', function(e) {
+      if ($('#aviso').prop('checked') ) {
+          if ($('#terminos').prop('checked') ) {
+              document.getElementById("bot").style= "display: block";
+          }else{
+              document.getElementById("bot").style= "display: none";
+          }
+      }else{
+          document.getElementById("bot").style= "display: none";
+      }
+  });
 
-    function cerrarMod1(){
-        $("#myModal").modal('close');
-        $( "#aviso" ).prop( "checked", true );
-    }
-
-    function cerrarMod2(){
-        $("#myModal2").modal('close');
-        $( "#terminos" ).prop( "checked", true );
-        let check1 = $("#aviso").val();
-        let check2 = $("#terminos").val();
-        if(check1 == 1 && check2 == 1){
-            document.getElementById("bot").style= "display: block";
-        }
-    }
-
+  $(document).on('click', '#terminos', function(e) {
+      if ($('#terminos').prop('checked') ) {
+          if ($('#aviso').prop('checked') ) {
+              document.getElementById("bot").style= "display: block";
+          }else{
+              document.getElementById("bot").style= "display: none";
+          }
+      }else{
+          document.getElementById("bot").style= "display: none";
+      }
+  });
 
     $(document).ready(function () {
         $('#fecha_recoleccion').datepicker({
@@ -414,7 +421,6 @@
             }
         });
     });
-
 
     $(document).ready(function () {
         $('#fecha_entrega_usuario').datepicker({
@@ -436,16 +442,19 @@
         $('#myModal2').modal();
     });
 
-    $(document).on('click', '#aviso', function(e) {
-        e.preventDefault();
-        $("#myModal").modal('open');
-    });
+    // $(document).on('click', '#aviso', function(e) {
+    //     e.preventDefault();
+    // //    $("#myModal").modal('open');
+    // });
+    //
+    // $(document).on('click', '#terminos', function(e) {
+    //     e.preventDefault();
+    //    $("#myModal2").modal('open');
+    // });
 
-    $(document).on('click', '#terminos', function(e) {
-        e.preventDefault();
-        $("#myModal2").modal('open');
-    });
-
+    function cerrarMod2() {
+        $("#myModal2").modal('close');
+    };
     $(document).on('click', '#terminos1', function(e) {
         e.preventDefault();
         $("#myModal2").modal('open');
