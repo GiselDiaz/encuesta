@@ -50,12 +50,7 @@
                                                     </div>
                                                     <div class="input-field col m1">
                                                         <center>
-                                                            <label class="validate">
-                                                                <input class="with-gap" name="{{$preg->id}}"
-                                                                       id="{{$preg->id}}" type="radio" value="B"
-                                                                       required/>
-                                                                <span></span>
-                                                            </label>
+                                                          9
                                                         </center>
                                                     </div>
                                                     <div class="input-field col m2">

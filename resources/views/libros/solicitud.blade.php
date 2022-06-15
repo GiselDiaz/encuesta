@@ -115,7 +115,7 @@
                                 <div class="form-group">
                                     <label class="validate">
                                         <input class="with-gap1" name="terminos" id="terminos" type="checkbox" value="1" required/> <span></span>
-                                        <strong>Acepto condiciones de prestamo.</strong>
+                                        <strong>Acepto condiciones de préstamo.</strong>
                                     </label>
                                 </div>
                             </div>
