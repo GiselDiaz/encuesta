@@ -15,20 +15,21 @@
     </style>
 
     <div class="container">
+        <div class="height-30vh">
+            <br>
+            <center>
+                <img src="{{ asset('genero/images/logo/Espacio_genero_pleca.svg' ) }}" alt="materialize" width="100%" heigth="100%"/>
+
+
+            </center>
+        </div>
+    </div>
+
+    {{-- <img src="{{ asset('genero/images/logo/Espacio_genero_pleca.svg' ) }}"> --}}
+    <div class="container">
         <div class="section">
             <div>
                 <div class="row"  style="background-color: rgba(198, 198, 198, .5);">
-                    <div class="row">
-                        <div class="col s12">
-                            <div class="card-content">
-                                <center>
-                                <img style="width: 100%;"
-                                     src="{{ asset('genero/images/logo/placa_genero.png' ) }}">
-                                    </center>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row" style="background-color: rgba(198, 198, 198, .5);">
 
                         <div class="col s12">
                             <nav>
@@ -43,7 +44,6 @@
                                 </div>
                             </nav>
                         </div>
-                    </div>
                 </div>
                 <div class="row">
                     <p style="font-size:18px; text-align: justify;">
